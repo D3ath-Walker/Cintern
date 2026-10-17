@@ -1,0 +1,256 @@
+.hero {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 45px;
+    align-items: center;
+    padding: 14px 0 15px;
+    min-height: 320px;
+    position: relative;
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0 calc(-1 * var(--content-gutter, 5.2vw));
+    background:
+        radial-gradient(ellipse at 8% 45%, #e7f2ff 0, transparent 54%),
+        linear-gradient(135deg, #f9fcff, #fff 70%);
+    z-index: 0;
+}
+
+.hero__copy,
+.funnel-card {
+    position: relative;
+    z-index: 1;
+}
+
+.eyebrow {
+    color: #123a70;
+    font-weight: 800;
+    letter-spacing: 1px;
+    font-size: 10px;
+}
+
+.hero h1 {
+    font-size: 35px;
+    line-height: 1.02;
+    letter-spacing: -1.4px;
+    margin: 12px 0;
+    color: #071a35;
+}
+
+.hero h1 em {
+    color: #126be8;
+    font-style: normal;
+}
+
+.hero__copy > p {
+    font-size: 14px;
+    line-height: 1.5;
+    color: #344b6c;
+    margin: 0;
+    max-width: 480px;
+}
+
+.hero__actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 14px;
+}
+
+.hero__actions .button {
+    font-size: 11px;
+    min-height: 39px;
+    padding: 0 17px;
+}
+
+.hero__checks {
+    display: flex;
+    gap: 15px;
+    margin-top: 18px;
+    color: #1670ef;
+    font-size: 12px;
+}
+
+.hero__checks b {
+    font-size: 8px;
+    color: #273b58;
+    font-weight: 500;
+    margin-left: 4px;
+}
+
+.funnel-card {
+    min-height: 280px;
+    border-radius: 18px;
+    background: linear-gradient(145deg, #06172e, #0b2443);
+    box-shadow: 0 13px 28px #142c4c2b;
+    color: #fff;
+    padding: 13px 23px 10px;
+    text-align: center;
+    overflow: hidden;
+}
+
+.funnel-card__tag {
+    display: inline-block;
+    border: 1px solid #75a6df;
+    border-radius: 20px;
+    padding: 2px 8px;
+    color: #dbeaff;
+    font-size: 8px;
+    line-height: 1.2;
+}
+
+.funnel-card h2 {
+    font-size: 14px;
+    margin: 6px 0 1px;
+    color: #fff;
+}
+
+.funnel-card > p {
+    font-size: 9px;
+    color: #c5d5eb;
+    margin: 0 0 8px;
+}
+
+.funnel-stage {
+    height: 42px;
+    max-width: 82%;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 10px;
+    padding: 4px 12px;
+    clip-path: polygon(0 0, 100% 0, 94% 100%, 6% 100%);
+    background: #174c91;
+    text-align: left;
+}
+
+.stage-two {
+    max-width: 73%;
+    background: #145087;
+}
+
+.stage-three {
+    max-width: 64%;
+    background: #16436f;
+}
+
+.stage-four {
+    max-width: 55%;
+    background: #173956;
+}
+
+.stage-icon {
+    font-size: 17px;
+    color: #dcecff;
+    width: 20px;
+}
+
+.funnel-stage strong {
+    font-size: 18px;
+    line-height: 1;
+}
+
+.funnel-stage small {
+    display: block;
+    font-size: 8px;
+    font-weight: 500;
+    margin-top: 3px;
+}
+
+.people {
+    display: grid;
+    grid-template-columns: repeat(12, 5px);
+    gap: 2px;
+    margin-left: auto;
+}
+
+.people i {
+    width: 5px;
+    height: 6px;
+    background: #2588ff;
+    border-radius: 3px 3px 1px 1px;
+    display: block;
+}
+
+.funnel-down {
+    height: 12px;
+    line-height: 12px;
+    color: #ffc72e;
+    font-size: 20px;
+    font-weight: 800;
+}
+
+.funnel-note {
+    position: absolute;
+    right: 13px;
+    top: 122px;
+    color: #ffc72e;
+    font-size: 9px;
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    text-align: left;
+}
+
+.funnel-note:first-letter {
+    font-size: 20px;
+}
+
+.funnel-disclaimer {
+    display: block;
+    font-size: 7px;
+    color: #b8cce4;
+    margin-top: 6px;
+}
+
+.stats-strip {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr auto;
+    align-items: center;
+    background: linear-gradient(90deg, #f5faff, #eaf4ff, #f7fbff);
+    margin: 0 -5.2vw;
+    padding: 12px 5.2vw;
+    gap: 15px;
+    min-height: 62px;
+}
+
+.stats-strip > div {
+    display: flex;
+    align-items: center;
+    gap: 9px;
+    border-right: 1px solid #cbdcf0;
+    padding-left: 12px;
+}
+
+.stat-icon {
+    font-size: 22px;
+    color: #2880f2;
+}
+
+.stats-strip strong {
+    font-size: 21px;
+    line-height: 1;
+    color: #1670ed;
+}
+
+.stats-strip strong small,
+.stats-strip strong em {
+    display: block;
+    color: #17365f;
+    font-size: 10px;
+    font-style: normal;
+    margin-top: 2px;
+}
+
+.stats-strip strong em {
+    font-size: 8px;
+    font-weight: 400;
+}
+
+.stats-strip > small {
+    font-size: 8px;
+    color: #576a83;
+    line-height: 1.3;
+}
