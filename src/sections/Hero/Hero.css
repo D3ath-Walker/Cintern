@@ -18,8 +18,7 @@
     z-index: 0;
 }
 
-.hero__copy,
-.funnel-card {
+.hero__copy {
     position: relative;
     z-index: 1;
 }
@@ -80,6 +79,8 @@
 }
 
 .funnel-card {
+    position: relative;
+    z-index: 1;
     min-height: 280px;
     border-radius: 18px;
     background: linear-gradient(145deg, #06172e, #0b2443);
@@ -207,7 +208,7 @@
 
 .stats-strip {
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr auto;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
     align-items: center;
     background: linear-gradient(90deg, #f5faff, #eaf4ff, #f7fbff);
     margin: 0 -5.2vw;
@@ -239,9 +240,12 @@
 .stats-strip strong em {
     display: block;
     color: #17365f;
-    font-size: 10px;
     font-style: normal;
     margin-top: 2px;
+}
+
+.stats-strip strong small {
+    font-size: 10px;
 }
 
 .stats-strip strong em {

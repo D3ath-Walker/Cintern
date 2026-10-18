@@ -1,13 +1,25 @@
 .site-page {
-    width:100%;
-    max-width:1440px;
-    margin:0 auto;
-    background:#fff;
-    overflow:hidden;
-    box-shadow:0 8px 40px #102a4810
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: none;
+    min-height: 100vh;
+    margin: 0;
+    overflow: visible;
+    color: #102b4d;
+    background: linear-gradient(140deg, #eaf4ff 0%, #f3f8ff 48%, #e5f1ff 100%);
+    background-attachment: fixed;
 }
+
 .page-content {
-    padding:0 max(calc((100vw - 1160px)/2),5.2vw)
+    position: relative;
+    isolation: isolate;
+    width: 100%;
+    max-width: 1920px;
+    margin: 0 auto;
+    padding: 98px var(--content-gutter) 32px;
+    color: #edf5ff;
+    background: transparent;
 }
 .challenge {
     display:grid;
@@ -485,9 +497,6 @@
     font-size:8px;
     color:#c7d6e9
 }
-.site-page .site-footer {
-    border-top:1px solid #eef3f8
-}
 @media(max-width:950px) {
     .page-content {
         padding:0 28px
@@ -775,35 +784,14 @@
         text-align:center
     }
 }
-/* Full-width application frame and fixed viewport chrome */
-.site-page {
-    width: 100%;
-    max-width: none;
-    min-height: 100vh;
-    margin: 0;
-    overflow: visible;
-    box-shadow: none;
-}
-.page-content {
-    padding-top: 98px;
-    padding-bottom: 82px;
-}
 @media (max-width: 700px) {
     .page-content {
         padding-top: 90px;
-        padding-bottom: 78px;
     }
 }
 /* Wider content grid and larger desktop typography */
 :root {
     --content-gutter: clamp(20px, 5.2vw, 96px);
-}
-.page-content {
-    width: 100%;
-    max-width: 1920px;
-    margin: 0 auto;
-    padding-right: var(--content-gutter);
-    padding-left: var(--content-gutter);
 }
 @media (min-width: 1200px) {
     .hero {
@@ -1163,14 +1151,6 @@ section[id] {
     }
 }
 /* Soft blue glass theme */
-.site-page {
-    position: relative;
-    isolation: isolate;
-    color: #102b4d;
-    background: linear-gradient(140deg, #eaf4ff 0%, #f3f8ff 48%, #e5f1ff 100%);
-    background-attachment: fixed;
-}
-
 .site-page::before {
     position: fixed;
     z-index: -1;
@@ -1236,7 +1216,6 @@ section[id] {
 }
 
 .enquiry {
-    background: linear-gradient(125deg, rgba(6, 24, 46, 0.91), rgba(11, 36, 67, 0.84));
     -webkit-backdrop-filter: blur(20px);
     backdrop-filter: blur(20px);
 }
@@ -1318,8 +1297,7 @@ section[id] {
 .why-lower p,
 .compare-card li,
 .benefit-card p,
-.proof-card p,
-.pipeline-summary > div:first-child p {
+.proof-card p {
     color: #344f70;
 }
 
@@ -1330,19 +1308,11 @@ section[id] {
 .enquiry .section-title h2,
 .enquiry .section-title p,
 .enquiry-points span,
-.form-grid label,
-.form-bottom small {
+.form-grid label {
     color: #f3f8ff;
 }
 
 /* Dark blue content canvas inspired by the portfolio's navy radial glow. */
-.page-content {
-    position: relative;
-    isolation: isolate;
-    color: #edf5ff;
-    background: transparent;
-}
-
 .page-content::before {
     position: fixed;
     z-index: -1;
@@ -1399,10 +1369,6 @@ section[id] {
 
 .page-content .how-section {
     background: rgba(5, 22, 42, 0.62);
-}
-
-.page-content .enquiry {
-    background: rgba(4, 19, 37, 0.72);
 }
 
 .page-content .compare-card--bad {
@@ -1493,19 +1459,11 @@ section[id] {
     border-color: rgba(192, 219, 255, 0.32);
     background: rgba(215, 233, 255, 0.1);
     color: #f1f6ff;
-}
-
-.page-content .form-grid input,
-.page-content .form-grid select,
-.page-content .form-grid textarea {
-    border-color: rgba(192, 219, 255, 0.3);
-    background: rgba(2, 13, 26, 0.45);
-    color: #f1f6ff;
-}
-
-.page-content .form-grid input::placeholder,
-.page-content .form-grid textarea::placeholder {
-    color: #aebfd5;
+    transition:
+        border-color 240ms ease,
+        box-shadow 240ms ease,
+        background-color 240ms ease,
+        transform 180ms ease;
 }
 
 @media (max-width: 700px) {
@@ -1523,17 +1481,9 @@ section[id] {
 }
 
 /* The footer is temporarily disabled; reclaim its reserved page space. */
-.page-content {
-    padding-bottom: 32px;
-}
-
 .page-content::before,
 .page-content::after {
     bottom: 0;
-}
-
-.stats-strip {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 .stats-strip > div {
@@ -1597,14 +1547,6 @@ section[id] {
 
 .site-page .site-footer nav a:hover {
     color: #9bc6ff;
-}
-
-.page-content .button--secondary {
-    transition:
-        border-color 240ms ease,
-        box-shadow 240ms ease,
-        background-color 240ms ease,
-        transform 180ms ease;
 }
 
 @media (max-width: 700px) {
@@ -1734,6 +1676,7 @@ section[id] {
 }
 
 .page-content .enquiry {
+    background: rgba(4, 19, 37, 0.72);
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
     align-items: start;
     gap: clamp(28px, 4vw, 64px);

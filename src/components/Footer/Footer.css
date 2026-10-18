@@ -1,17 +1,22 @@
-﻿.site-footer {
+.site-footer {
+    position: fixed;
+    inset: auto 0 0;
+    z-index: 108;
+    width: 100%;
     min-height: 62px;
-    padding: 12px max(calc((100vw - 1160px) / 2), 5.2vw);
+    padding: 12px var(--content-gutter);
 
     display: flex;
     align-items: center;
     justify-content: space-between;
 
     background: #fff;
+    box-shadow: 0 -3px 12px #0e23410d;
 }
 
 .site-footer .brand__mark {
-    width: 29px;
-    height: 29px;
+    width: 34px;
+    height: 30px;
     font-size: 17px;
 }
 
@@ -33,26 +38,4 @@
     font-size: 9px;
     color: #213958;
     text-decoration: none;
-}
-
-/* Keep the compact footer available while scrolling. */
-.site-footer {
-    position: fixed;
-    inset: auto 0 0;
-    z-index: 108;
-    width: 100%;
-    min-height: 62px;
-
-    background: #fff;
-    box-shadow: 0 -3px 12px #0e23410d;
-}
-
-.site-footer {
-    padding-right: var(--content-gutter);
-    padding-left: var(--content-gutter);
-}
-
-.site-footer .brand__mark {
-    width: 34px;
-    height: 30px;
 }
