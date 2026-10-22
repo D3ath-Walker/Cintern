@@ -1675,6 +1675,252 @@ section[id] {
     }
 }
 
+/* Roomier middle sections. Hero and Employer Enquiry keep their existing sizing. */
+.page-content .challenge {
+    gap: clamp(20px, 2.4vw, 38px);
+    padding-top: clamp(34px, 4.2vw, 64px);
+    padding-bottom: clamp(34px, 4.2vw, 64px);
+}
+
+.page-content .compare-card {
+    min-height: 158px;
+    padding: 20px 22px;
+    border-radius: 16px;
+}
+
+.page-content .compare-card h3 {
+    margin-bottom: 12px;
+    font-size: 16px;
+}
+
+.page-content .compare-card li {
+    margin: 9px 0;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+.page-content .how-section {
+    padding-top: clamp(36px, 4.5vw, 62px);
+    padding-bottom: clamp(40px, 4.8vw, 68px);
+    border-top: 0;
+    border-bottom: 0;
+}
+
+.page-content .how-heading .section-title {
+    margin-bottom: 22px;
+}
+
+.page-content .steps {
+    gap: clamp(12px, 1.6vw, 22px);
+}
+
+.page-content .step {
+    min-height: 166px;
+    padding: 20px 14px;
+    border-radius: 16px;
+}
+
+.page-content .step__icon {
+    margin-bottom: 9px;
+    font-size: 30px;
+}
+
+.page-content .step strong {
+    font-size: 14px;
+}
+
+.page-content .step p {
+    margin-top: 9px;
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+.page-content .benefits {
+    gap: clamp(24px, 3vw, 44px);
+    padding-top: clamp(36px, 4.5vw, 62px);
+    padding-bottom: clamp(36px, 4.5vw, 62px);
+    border: 0;
+}
+
+.page-content .benefits .section-title {
+    margin-top: 14px;
+}
+
+.page-content .benefit-grid {
+    gap: 14px;
+}
+
+.page-content .benefit-card {
+    min-height: 92px;
+    padding: 16px 18px;
+    border-radius: 15px;
+}
+
+.page-content .benefit-card > span {
+    font-size: 30px;
+}
+
+.page-content .benefit-card h3,
+.page-content .proof-card h3 {
+    font-size: 14px;
+}
+
+.page-content .benefit-card p,
+.page-content .proof-card p {
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.page-content .why-section {
+    gap: clamp(22px, 2.8vw, 42px);
+    padding-top: clamp(38px, 4.6vw, 66px);
+    padding-bottom: clamp(38px, 4.6vw, 66px);
+}
+
+.page-content .network-visual {
+    min-height: 180px;
+}
+
+.page-content .network-orbit {
+    width: 156px;
+    height: 148px;
+}
+
+.page-content .network-orbit > b {
+    width: 52px;
+    height: 52px;
+}
+
+.page-content .proof-grid {
+    gap: 12px;
+}
+
+.page-content .proof-card {
+    min-height: 160px;
+    padding: 20px 14px;
+    border-radius: 16px;
+}
+
+.page-content .proof-card > span {
+    font-size: 26px;
+}
+
+.page-content .why-principles {
+    margin-top: 12px;
+    padding-top: 30px;
+    border-top: 0;
+}
+
+.page-content .why-principles__grid {
+    gap: 16px;
+}
+
+.page-content .why-principle-card {
+    min-height: 190px;
+    padding: 22px;
+    border-radius: 16px;
+}
+
+.page-content .why-principle-card h3 {
+    font-size: 15px;
+}
+
+.page-content .why-principle-card p {
+    font-size: 13px;
+    line-height: 1.55;
+}
+
+.page-content .pipeline-summary {
+    padding-top: clamp(30px, 3.8vw, 52px);
+    padding-bottom: clamp(34px, 4vw, 56px);
+    border-top: 0;
+}
+
+.page-content .pipeline-summary h2 {
+    font-size: clamp(22px, 2.3vw, 30px);
+}
+
+.page-content .pipeline-summary > div:first-child p {
+    margin: 8px 0 20px;
+    font-size: 14px;
+}
+
+.page-content .pipeline-flow {
+    gap: 12px;
+}
+
+.page-content .pipeline-flow > span,
+.page-content .pipeline-flow > strong {
+    min-height: 60px;
+    padding: 0 16px;
+    border-radius: 13px;
+}
+
+.page-content .pipeline-flow b {
+    font-size: 12px;
+}
+
+@media (max-width: 950px) {
+    .page-content .step {
+        min-height: 152px;
+    }
+
+    .page-content .benefit-card {
+        min-height: 86px;
+    }
+}
+
+@media (max-width: 700px) {
+    .page-content .challenge,
+    .page-content .why-section {
+        padding-top: 30px;
+        padding-bottom: 30px;
+    }
+
+    .page-content .compare-card {
+        min-height: 0;
+    }
+
+    .page-content .step {
+        min-height: 144px;
+        padding: 18px 12px;
+    }
+
+    .page-content .benefits {
+        padding-top: 32px;
+        padding-bottom: 32px;
+    }
+
+    .page-content .benefit-card {
+        min-height: 84px;
+        padding: 14px;
+    }
+
+    .page-content .proof-card {
+        min-height: 142px;
+    }
+
+    .page-content .why-principle-card {
+        min-height: 0;
+        padding: 18px;
+    }
+
+    .page-content .pipeline-summary {
+        padding-top: 30px;
+        padding-bottom: 32px;
+    }
+}
+
+@media (max-width: 420px) {
+    .page-content .step {
+        min-height: 132px;
+    }
+
+    .page-content .proof-card {
+        min-height: 0;
+    }
+}
+
 .page-content .enquiry {
     background: rgba(4, 19, 37, 0.72);
     grid-template-columns: minmax(0, 0.78fr) minmax(0, 1.22fr);
@@ -1922,5 +2168,350 @@ section[id] {
     .enquiry-form__header > small {
         display: block;
         margin-top: 9px;
+    }
+}
+
+/* Keep the expanded principle cards after their base component rules. */
+.page-content .why-principle-card {
+    min-height: 190px;
+    padding: 22px;
+    border-radius: 16px;
+}
+
+@media (max-width: 700px) {
+    .page-content .why-principle-card {
+        min-height: 0;
+        padding: 18px;
+    }
+}
+
+/* Give every main section the same navy glass background. */
+.page-content > .hero,
+.page-content > .challenge,
+.page-content > .how-section,
+.page-content > .benefits,
+.page-content > .why-section,
+.page-content > .pipeline-summary,
+.page-content > .enquiry {
+    background: rgba(11, 31, 56, 0.42);
+}
+
+.site-page .site-header .brand__mark {
+    border: 1px solid #fff;
+}
+
+/* Keep section transitions and the surrounding page canvas on one navy base. */
+.page-content {
+    background-color: #020d1a;
+}
+
+.page-content > .hero,
+.page-content > .challenge,
+.page-content > .how-section,
+.page-content > .benefits,
+.page-content > .why-section,
+.page-content > .pipeline-summary,
+.page-content > .enquiry {
+    background: transparent;
+}
+
+/* Light navy canvas with softly drifting blue and white background spots. */
+html,
+body,
+#root,
+.site-page {
+    background-color: #021732 !important;
+    background-image: none !important;
+}
+
+.page-content,
+.page-content > section {
+    background: transparent !important;
+}
+
+.site-page::before,
+.site-page::after {
+    position: fixed;
+    z-index: -1;
+    inset: -18%;
+    display: block !important;
+    content: "";
+    pointer-events: none;
+    background-repeat: no-repeat;
+    filter: blur(62px);
+    will-change: background-position;
+}
+
+.site-page::before {
+    background-image:
+        radial-gradient(ellipse at 18% 24%, rgba(76, 151, 255, 0.4), transparent 28%),
+        radial-gradient(ellipse at 78% 18%, rgba(108, 174, 255, 0.34), transparent 30%),
+        radial-gradient(ellipse at 62% 78%, rgba(91, 158, 255, 0.3), transparent 32%),
+        radial-gradient(ellipse at 20% 82%, rgba(229, 242, 255, 0.2), transparent 25%);
+    background-size: 150% 150%, 160% 160%, 170% 170%, 150% 150%;
+    opacity: 0.82;
+    animation: blue-spots-drift 38s ease-in-out infinite alternate;
+}
+
+.site-page::after {
+    background-image:
+        radial-gradient(circle at 32% 38%, rgba(157, 202, 255, 0.34), transparent 9%),
+        radial-gradient(circle at 86% 58%, rgba(132, 187, 255, 0.3), transparent 10%),
+        radial-gradient(circle at 48% 92%, rgba(174, 211, 255, 0.26), transparent 8%);
+    background-size: 170% 170%, 180% 180%, 160% 160%;
+    filter: blur(42px);
+    opacity: 0.72;
+    animation: white-spots-drift 52s ease-in-out infinite alternate;
+}
+
+@keyframes blue-spots-drift {
+    0% {
+        background-position: 0% 0%, 100% 10%, 70% 100%, 5% 80%;
+    }
+
+    50% {
+        background-position: 35% 45%, 55% 0%, 10% 60%, 90% 20%;
+    }
+
+    100% {
+        background-position: 85% 100%, 0% 75%, 100% 5%, 30% 100%;
+    }
+}
+
+@keyframes white-spots-drift {
+    0% {
+        background-position: 10% 100%, 95% 0%, 50% 30%;
+    }
+
+    50% {
+        background-position: 80% 35%, 15% 70%, 100% 100%;
+    }
+
+    100% {
+        background-position: 25% 0%, 70% 100%, 0% 15%;
+    }
+}
+
+.page-content::before,
+.page-content::after,
+.page-content .hero::before {
+    display: none !important;
+    animation: none !important;
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-page::before,
+    .site-page::after {
+        animation: none;
+    }
+}
+
+/* Keep the fixed navigation translucent over the animated page background. */
+.site-page .site-header {
+    background: rgba(5, 18, 35, 0.58) !important;
+    -webkit-backdrop-filter: blur(22px) saturate(145%);
+    backdrop-filter: blur(22px) saturate(145%);
+}
+
+.site-page .site-header .nav > a.nav__link--active:not(.button)::after {
+    background: #ffd66b !important;
+    background-color: #ffd66b !important;
+    box-shadow: 0 0 10px rgba(255, 214, 107, 0.5);
+}
+
+.site-page .site-header .nav > a.nav__link--active:not(.button) {
+    color: #ffd66b !important;
+}
+
+/* Give the Hero statement and its supporting details more presence. */
+.page-content > .hero {
+    min-height: clamp(470px, 58vw, 680px);
+    gap: clamp(38px, 5vw, 76px);
+    padding-top: clamp(46px, 6vw, 84px);
+    padding-bottom: clamp(46px, 6vw, 84px);
+}
+
+.page-content .hero h1 {
+    max-width: 900px;
+    font-size: clamp(46px, 5.2vw, 76px);
+    line-height: 1.06;
+    letter-spacing: -0.035em;
+}
+
+.page-content .hero__copy > p {
+    max-width: 700px;
+    margin-top: 24px;
+    font-size: clamp(16px, 1.3vw, 19px);
+    line-height: 1.7;
+}
+
+.page-content .hero__checks {
+    gap: 18px 24px;
+    margin-top: 28px;
+}
+
+.page-content .hero__actions {
+    gap: 16px;
+    margin-top: 30px;
+}
+
+@media (max-width: 700px) {
+    .page-content > .hero {
+        min-height: 0;
+        gap: 28px;
+        padding-top: 38px;
+        padding-bottom: 38px;
+    }
+
+    .page-content .hero h1 {
+        font-size: clamp(38px, 9vw, 52px);
+    }
+
+    .page-content .hero__copy > p {
+        margin-top: 18px;
+        font-size: 16px;
+    }
+
+    .page-content .hero__actions {
+        margin-top: 22px;
+    }
+}
+
+/* Lift the Hero slightly closer to the fixed header. */
+.page-content > .hero {
+    margin-top: -48px;
+}
+
+@media (max-width: 700px) {
+    .page-content > .hero {
+        margin-top: -22px;
+    }
+}
+
+/* Match the Hero funnel layout from the first Cinfo reference. */
+.page-content .funnel-card {
+    position: relative;
+    padding-right: clamp(24px, 3vw, 42px);
+    padding-left: clamp(24px, 3vw, 42px);
+}
+
+.page-content .funnel-card h2 {
+    margin-bottom: 6px;
+    font-size: clamp(17px, 1.35vw, 21px);
+}
+
+.page-content .funnel-card > p {
+    margin-bottom: 20px;
+    font-size: clamp(10px, 0.8vw, 12px);
+}
+
+.page-content .funnel-stage {
+    transform: scaleX(0.82);
+    transform-origin: left center;
+}
+
+.page-content .funnel-note {
+    right: 0;
+    width: 21%;
+    max-width: 160px;
+    text-align: center;
+    font-size: clamp(9px, 0.76vw, 12px);
+    line-height: 1.3;
+}
+
+@media (max-width: 700px) {
+    .page-content .funnel-stage {
+        transform: scaleX(0.9);
+    }
+
+    .page-content .funnel-note {
+        right: 2px;
+        width: 20%;
+        font-size: 8px;
+    }
+}
+
+/* The reference funnel is an image asset, so let it keep its native ratio. */
+.page-content .funnel-card {
+    min-height: 0;
+    padding: 0 !important;
+    overflow: visible;
+    border: 0;
+    border-radius: 18px;
+    background: transparent !important;
+    box-shadow: none;
+    -webkit-backdrop-filter: none;
+    backdrop-filter: none;
+}
+
+.funnel-card__image {
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 18px;
+}
+
+.hero__side-image-frame {
+    position: relative;
+    isolation: isolate;
+    justify-self: center;
+    width: 78%;
+    padding: 2px;
+    overflow: visible;
+    border-radius: 21px;
+    transition: filter 220ms ease;
+}
+
+.hero__side-image-frame::before {
+    position: absolute;
+    z-index: 0;
+    inset: 2px;
+    border-radius: inherit;
+    background: conic-gradient(
+        from 0deg,
+        #174f9b,
+        #72cfff,
+        #2878ed,
+        #b3eaff,
+        #174f9b
+    );
+    content: "";
+    filter: blur(13px);
+    opacity: 0.82;
+    animation: side-image-border-rotation 5s linear infinite;
+    transition: background 250ms ease, opacity 250ms ease, filter 250ms ease;
+}
+
+.hero__side-image-frame:hover::before {
+    background: conic-gradient(
+        from 0deg,
+        #80500b,
+        #ffe28a,
+        #d99a20,
+        #fff1bd,
+        #80500b
+    );
+    filter: blur(15px);
+    opacity: 0.95;
+}
+
+.hero__side-image {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: auto;
+    border-radius: 19px;
+}
+
+@keyframes side-image-border-rotation {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .hero__side-image-frame::before {
+        animation: none;
     }
 }

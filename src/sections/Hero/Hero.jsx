@@ -1,8 +1,6 @@
 ﻿import Button from '../../components/Button/Button';
+import sideImage from '../../assets/images/side1.png';
 import './Hero.css';
-
-const people = (count) =>
-  Array.from({ length: count }, (_, index) => <i key={index} />);
 
 export default function Hero() {
   return (
@@ -32,45 +30,12 @@ export default function Hero() {
             <span>✓ <b>Employer makes the final decision</b></span>
           </div>
         </div>
-
-        <div className="funnel-card glass-panel">
-          <div className="funnel-card__tag">ILLUSTRATIVE EXAMPLE</div>
-          <h2>From a wide student pool to your interview shortlist</h2>
-          <p>
-            An example of how a focused talent pipeline can be built (illustrative
-            numbers).
-          </p>
-          <div className="funnel-stage stage-one">
-            <span className="stage-icon">♙</span>
-            <strong>100<small>Candidates trained</small></strong>
-            <span className="people">{people(24)}</span>
-          </div>
-          <div className="funnel-down">⌄</div>
-          <div className="funnel-stage stage-two">
-            <span className="stage-icon">♟</span>
-            <strong>40<small>Assessed &amp; screened</small></strong>
-            <span className="people">{people(16)}</span>
-          </div>
-          <div className="funnel-down">⌄</div>
-          <div className="funnel-stage stage-three">
-            <span className="stage-icon">♙</span>
-            <strong>20<small>Recommended to you</small></strong>
-            <span className="people">{people(10)}</span>
-          </div>
-          <div className="funnel-down">⌄</div>
-          <div className="funnel-stage stage-four">
-            <span className="stage-icon">♙</span>
-            <strong>10<small>Interview target</small></strong>
-            <span className="people">{people(5)}</span>
-          </div>
-          <div className="funnel-note">
-            <span>↻</span>
-            <span>A focused pipeline of<br />job-ready freshers</span>
-          </div>
-          <small className="funnel-disclaimer">
-            ⓘ Numbers are illustrative and may vary based on roles, demand and
-            eligibility criteria.
-          </small>
+        <div className="hero__side-image-frame">
+          <img
+            className="hero__side-image"
+            src={sideImage}
+            alt="Industry-to-campus talent pipeline, showing technical training, assessment, and candidate recommendations."
+          />
         </div>
       </section>
 
