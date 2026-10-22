@@ -1,0 +1,122 @@
+.how-section {
+    margin: 0 calc(-1 * var(--section-gutter));
+    padding: clamp(36px, 4.5vw, 62px) max(calc((100vw - 1160px) / 2), var(--section-gutter)) clamp(40px, 4.8vw, 68px);
+    -webkit-backdrop-filter: blur(20px);
+    backdrop-filter: blur(20px);
+}
+
+.how-heading {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.outline-pill {
+    margin-top: 6px;
+    padding: 4px 10px;
+    border-radius: 20px;
+    color: #e0edff;
+    font-size: 8px;
+}
+
+.steps {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    gap: clamp(12px, 1.6vw, 22px);
+}
+
+.step {
+    position: relative;
+    min-height: 166px;
+    padding: 20px 14px;
+    border-radius: 16px;
+    text-align: center;
+}
+
+.step:not(:last-child)::after {
+    position: absolute;
+    top: 42%;
+    right: -13px;
+    z-index: 1;
+    color: #ffc22b;
+    content: "→";
+    font-size: 21px;
+    font-weight: 800;
+}
+
+.step__number {
+    position: absolute;
+    top: 11px;
+    left: 12px;
+    display: grid;
+    place-items: center;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background: #1471eb;
+    color: #fff;
+    font-size: 11px;
+}
+
+.step__icon {
+    display: block;
+    margin: 0 auto 9px;
+    color: #acd2ff;
+    font-size: 30px;
+    line-height: 1.2;
+}
+
+.step strong {
+    display: block;
+    color: #f3f8ff;
+    font-size: 14px;
+}
+
+.step p {
+    margin: 9px 0 0;
+    color: var(--color-text-muted);
+    font-size: 12px;
+    line-height: 1.55;
+}
+
+@media (min-width: 1200px) {
+    .outline-pill {
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 950px) {
+    .step {
+        min-height: 152px;
+    }
+}
+
+@media (max-width: 700px) {
+    .how-heading {
+        display: block;
+    }
+
+    .outline-pill {
+        display: inline-block;
+        margin: 0 0 12px;
+    }
+
+    .steps {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .step {
+        min-height: 144px;
+        padding: 18px 12px;
+    }
+
+    .step:not(:last-child)::after {
+        display: none;
+    }
+}
+
+@media (max-width: 420px) {
+    .step {
+        min-height: 132px;
+    }
+}

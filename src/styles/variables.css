@@ -1,0 +1,21 @@
+:root {
+    --content-gutter: clamp(20px, 5.2vw, 96px);
+    --section-gutter: 5.2vw;
+
+    --color-text: #f1f6ff;
+    --color-text-muted: #c2d1e5;
+    --color-gold: #ffd66b;
+    --color-icon: #8dbdff;
+}
+
+@media (max-width: 950px) {
+    :root {
+        --section-gutter: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --section-gutter: 18px;
+    }
+}

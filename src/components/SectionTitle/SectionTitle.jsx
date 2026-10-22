@@ -1,15 +1,8 @@
-﻿import './SectionTitle.css';
+import './SectionTitle.css';
 
-export default function SectionTitle({
-  title,
-  subtitle,
-  dark = false,
-  eyebrow,
-}) {
-  const classes = `section-title ${dark ? 'section-title--dark' : ''}`;
-
+export default function SectionTitle({ title, subtitle, eyebrow }) {
   return (
-    <div className={classes}>
+    <div className="section-title">
       {eyebrow && <span className="section-title__eyebrow">{eyebrow}</span>}
       <h2>{title}</h2>
       {subtitle && <p>{subtitle}</p>}

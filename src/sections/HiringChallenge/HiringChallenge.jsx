@@ -1,4 +1,30 @@
-﻿import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import './HiringChallenge.css';
+
+const comparisons = [
+  {
+    variant: 'bad',
+    icon: '×',
+    title: 'Typical hiring',
+    points: [
+      'Large applicant volumes',
+      'Uneven technical readiness',
+      'Generic preparation',
+      'Time-consuming interviews',
+    ],
+  },
+  {
+    variant: 'good',
+    icon: '✓',
+    title: 'The ChiPi approach',
+    points: [
+      'Start with your actual demand',
+      'Train for role-specific skills',
+      'Assess before referral',
+      'Employer retains final selection',
+    ],
+  },
+];
 
 export default function HiringChallenge() {
   return (
@@ -14,25 +40,16 @@ export default function HiringChallenge() {
         </p>
       </div>
 
-      <div className="compare-card compare-card--bad glass-panel">
-        <h3><span>×</span> Typical hiring</h3>
-        <ul>
-          <li>Large applicant volumes</li>
-          <li>Uneven technical readiness</li>
-          <li>Generic preparation</li>
-          <li>Time-consuming interviews</li>
-        </ul>
-      </div>
-
-      <div className="compare-card compare-card--good glass-panel">
-        <h3><span>✓</span> The ChiPi approach</h3>
-        <ul>
-          <li>Start with your actual demand</li>
-          <li>Train for role-specific skills</li>
-          <li>Assess before referral</li>
-          <li>Employer retains final selection</li>
-        </ul>
-      </div>
+      {comparisons.map(({ variant, icon, title, points }) => (
+        <div className={`compare-card compare-card--${variant} glass-panel`} key={variant}>
+          <h3><span>{icon}</span> {title}</h3>
+          <ul>
+            {points.map((point) => (
+              <li key={point}>{point}</li>
+            ))}
+          </ul>
+        </div>
+      ))}
     </section>
   );
 }

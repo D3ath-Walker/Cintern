@@ -1,4 +1,5 @@
-﻿import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import './Benefits.css';
 
 const benefits = [
   ['▽', 'Reduce interview volume', 'Meet relevant, pre-assessed candidates.'],

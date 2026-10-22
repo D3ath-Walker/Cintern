@@ -1,6 +1,18 @@
-﻿import Button from '../../components/Button/Button';
+import Button from '../../components/Button/Button';
 import sideImage from '../../assets/images/side1.png';
 import './Hero.css';
+
+const checks = [
+  'Built around your roles',
+  'Screened against agreed criteria',
+  'Employer makes the final decision',
+];
+
+const stats = [
+  ['♧', 'College network', 'Campus relationships', 'Across institutions'],
+  ['⚙', 'IT expertise', 'Software and training', 'Industry-focused experience'],
+  ['♧', 'Student reach', 'Learning programs', 'Building job-ready skills'],
+];
 
 export default function Hero() {
   return (
@@ -25,9 +37,9 @@ export default function Hero() {
             </Button>
           </div>
           <div className="hero__checks">
-            <span>✓ <b>Built around your roles</b></span>
-            <span>✓ <b>Screened against agreed criteria</b></span>
-            <span>✓ <b>Employer makes the final decision</b></span>
+            {checks.map((check) => (
+              <span key={check}>✓ <b>{check}</b></span>
+            ))}
           </div>
         </div>
         <div className="hero__side-image-frame">
@@ -40,30 +52,16 @@ export default function Hero() {
       </section>
 
       <div className="stats-strip">
-        <div>
-          <span className="stat-icon">♧</span>
-          <strong>
-            College network
-            <small>Campus relationships</small>
-            <em>Across institutions</em>
-          </strong>
-        </div>
-        <div>
-          <span className="stat-icon">⚙</span>
-          <strong>
-            IT expertise
-            <small>Software and training</small>
-            <em>Industry-focused experience</em>
-          </strong>
-        </div>
-        <div>
-          <span className="stat-icon">♧</span>
-          <strong>
-            Student reach
-            <small>Learning programs</small>
-            <em>Building job-ready skills</em>
-          </strong>
-        </div>
+        {stats.map(([icon, title, subtitle, note]) => (
+          <div key={title}>
+            <span className="stat-icon">{icon}</span>
+            <strong>
+              {title}
+              <small>{subtitle}</small>
+              <em>{note}</em>
+            </strong>
+          </div>
+        ))}
       </div>
     </>
   );

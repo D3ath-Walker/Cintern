@@ -1,4 +1,5 @@
-﻿import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import './HowItWorks.css';
 
 const steps = [
   ['▤', 'Share demand', 'Tell us your roles, technologies and hiring volume.'],
@@ -16,7 +17,6 @@ export default function HowItWorks() {
         <SectionTitle
           title="How it works"
           subtitle="A simple, structured process from your hiring requirement to interview-ready candidates."
-          dark
         />
         <span className="outline-pill glass-panel">A COLLABORATIVE INDUSTRY-TO-CAMPUS MODEL</span>
       </div>

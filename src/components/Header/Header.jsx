@@ -1,8 +1,13 @@
-﻿import { useState } from 'react';
-import { useEffect } from 'react';
-import chipiLogo from '../../assets/images/chipi-logo.jpg';
+import { useEffect, useState } from 'react';
+import Brand from '../Brand/Brand';
 import Button from '../Button/Button';
 import './Header.css';
+
+const navLinks = [
+  ['how-it-works', 'How It Works'],
+  ['why-chip', 'Why ChiPi'],
+  ['enquiry', 'Employer Enquiry'],
+];
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -10,13 +15,11 @@ export default function Header() {
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
-    const sectionIds = ['how-it-works', 'why-chip', 'enquiry'];
-
     const updateActiveSection = () => {
       const activationLine = window.scrollY + window.innerHeight * 0.38;
       let currentSection = 'how-it-works';
 
-      sectionIds.forEach((sectionId) => {
+      navLinks.forEach(([sectionId]) => {
         const section = document.getElementById(sectionId);
 
         if (
@@ -58,39 +61,24 @@ export default function Header() {
       </div>
 
       <header className="site-header">
-        <a className="brand" href="#top" aria-label="ChiPi Technologies home">
-          <img className="brand__mark" src={chipiLogo} alt="" />
-          <span>
-            <b>CHIPI TECHNOLOGIES</b>
-            <small>Turning Ideas Into Software</small>
-          </span>
-        </a>
+        <Brand />
 
-        <nav className={`nav ${menuOpen ? 'nav--open' : ''}`}>
-          <a
-            href="#how-it-works"
-            className={activeSection === 'how-it-works' ? 'nav__link--active' : ''}
-            aria-current={activeSection === 'how-it-works' ? 'location' : undefined}
-            onClick={() => handleNavClick('how-it-works')}
-          >
-            How It Works
-          </a>
-          <a
-            href="#why-chip"
-            className={activeSection === 'why-chip' ? 'nav__link--active' : ''}
-            aria-current={activeSection === 'why-chip' ? 'location' : undefined}
-            onClick={() => handleNavClick('why-chip')}
-          >
-            Why ChiPi
-          </a>
-          <a
-            href="#enquiry"
-            className={activeSection === 'enquiry' ? 'nav__link--active' : ''}
-            aria-current={activeSection === 'enquiry' ? 'location' : undefined}
-            onClick={() => handleNavClick('enquiry')}
-          >
-            Employer Enquiry
-          </a>
+        <nav className={menuOpen ? 'nav nav--open' : 'nav'}>
+          {navLinks.map(([sectionId, label]) => {
+            const active = activeSection === sectionId;
+
+            return (
+              <a
+                key={sectionId}
+                href={`#${sectionId}`}
+                className={active ? 'nav__link nav__link--active' : 'nav__link'}
+                aria-current={active ? 'location' : undefined}
+                onClick={() => handleNavClick(sectionId)}
+              >
+                {label}
+              </a>
+            );
+          })}
           <Button onClick={closeMenu}>
             Share Hiring Requirement <span>→</span>
           </Button>

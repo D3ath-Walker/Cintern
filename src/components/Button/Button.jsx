@@ -1,11 +1,7 @@
-﻿import './Button.css';
+import './Button.css';
 
 export default function Button({ children, href = '#enquiry', secondary = false, className = '', onClick }) {
-  const classes = [
-    'button',
-    secondary ? 'button--secondary glass-panel' : '',
-    className,
-  ]
+  const classes = ['button', secondary && 'button--secondary glass-panel', className]
     .filter(Boolean)
     .join(' ');
 

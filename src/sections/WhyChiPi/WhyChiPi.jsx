@@ -1,4 +1,5 @@
-﻿import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import './WhyChiPi.css';
 
 const proofPoints = [
   ['♙', 'College network', 'Strong relationships with colleges and access to a wider student base.'],

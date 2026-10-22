@@ -1,6 +1,39 @@
-﻿import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import { Fragment, useState } from 'react';
+import SectionTitle from '../../components/SectionTitle/SectionTitle';
+import './EmployerEnquiry.css';
 
-import { useState } from 'react';
+const nextSteps = [
+  ['01', 'Share the role', 'Outline the skills, eligibility and hiring volume you have in mind.'],
+  ['02', 'Align the preparation', 'Shape training and screening around the criteria your team agrees on.'],
+  ['03', 'You choose the candidates', 'Your team keeps control of interviews and final hiring decisions.'],
+];
+
+const formSections = [
+  {
+    number: '01',
+    title: 'Company and contact',
+    copy: 'Who should we reach out to about this requirement?',
+    fields: [
+      { label: 'Company name', name: 'companyName', required: true, autoComplete: 'organization', placeholder: 'Your company name' },
+      { label: 'Contact person', name: 'contactName', required: true, autoComplete: 'name', placeholder: 'Your name' },
+      { label: 'Business email', name: 'email', required: true, type: 'email', autoComplete: 'email', placeholder: 'name@company.com' },
+      { label: 'Phone number', name: 'phone', required: true, type: 'tel', autoComplete: 'tel', placeholder: '+91 98765 43210' },
+      { label: 'Your designation', name: 'designation', autoComplete: 'organization-title', placeholder: 'e.g. Talent Acquisition Lead' },
+      { label: 'Company website', name: 'website', type: 'url', autoComplete: 'url', placeholder: 'https://company.com' },
+    ],
+  },
+  {
+    number: '02',
+    title: 'Hiring requirement',
+    copy: 'Share the essentials; you can refine the details later.',
+    fields: [
+      { label: 'Role / technology', name: 'role', required: true, placeholder: 'e.g. Java Developer' },
+      { label: 'Number of candidates', name: 'candidateCount', required: true, type: 'number', min: '1', step: '1', placeholder: 'e.g. 10' },
+      { label: 'Hiring location', name: 'location', placeholder: 'City, state or multiple locations' },
+      { label: 'Expected hiring date', name: 'hiringDate', type: 'date' },
+    ],
+  },
+];
 
 export default function EmployerEnquiry() {
   const [formNotice, setFormNotice] = useState('');
@@ -19,32 +52,19 @@ export default function EmployerEnquiry() {
           eyebrow="EMPLOYER ENQUIRY"
           title="Tell us who you need to hire."
           subtitle="Share a few details about your hiring need. We’ll use them to shape a focused first conversation."
-          dark
         />
 
         <div className="enquiry-next-steps">
           <h3>From your requirement to your shortlist</h3>
-          <div className="enquiry-next-steps__item">
-            <span>01</span>
-            <div>
-              <b>Share the role</b>
-              <p>Outline the skills, eligibility and hiring volume you have in mind.</p>
+          {nextSteps.map(([number, title, copy]) => (
+            <div className="enquiry-next-steps__item" key={number}>
+              <span>{number}</span>
+              <div>
+                <b>{title}</b>
+                <p>{copy}</p>
+              </div>
             </div>
-          </div>
-          <div className="enquiry-next-steps__item">
-            <span>02</span>
-            <div>
-              <b>Align the preparation</b>
-              <p>Shape training and screening around the criteria your team agrees on.</p>
-            </div>
-          </div>
-          <div className="enquiry-next-steps__item">
-            <span>03</span>
-            <div>
-              <b>You choose the candidates</b>
-              <p>Your team keeps control of interviews and final hiring decisions.</p>
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -58,63 +78,26 @@ export default function EmployerEnquiry() {
         </div>
 
         <div className="form-grid">
-          <div className="form-section-heading form-wide">
-            <span>01</span>
-            <div>
-              <h4>Company and contact</h4>
-              <p>Who should we reach out to about this requirement?</p>
-            </div>
-          </div>
+          {formSections.map(({ number, title, copy, fields }) => (
+            <Fragment key={number}>
+              <div className="form-section-heading form-wide">
+                <span>{number}</span>
+                <div>
+                  <h4>{title}</h4>
+                  <p>{copy}</p>
+                </div>
+              </div>
 
-          <label>
-            Company name <b>*</b>
-            <input autoComplete="organization" name="companyName" required placeholder="Your company name" />
-          </label>
-          <label>
-            Contact person <b>*</b>
-            <input autoComplete="name" name="contactName" required placeholder="Your name" />
-          </label>
-          <label>
-            Business email <b>*</b>
-            <input autoComplete="email" name="email" required type="email" placeholder="name@company.com" />
-          </label>
-          <label>
-            Phone number <b>*</b>
-            <input autoComplete="tel" name="phone" required type="tel" placeholder="+91 98765 43210" />
-          </label>
-          <label>
-            Your designation
-            <input autoComplete="organization-title" name="designation" placeholder="e.g. Talent Acquisition Lead" />
-          </label>
-          <label>
-            Company website
-            <input autoComplete="url" name="website" type="url" placeholder="https://company.com" />
-          </label>
+              {fields.map(({ label, ...input }) => (
+                <label key={input.name}>
+                  {label}
+                  {input.required && <> <b>*</b></>}
+                  <input {...input} />
+                </label>
+              ))}
+            </Fragment>
+          ))}
 
-          <div className="form-section-heading form-wide">
-            <span>02</span>
-            <div>
-              <h4>Hiring requirement</h4>
-              <p>Share the essentials; you can refine the details later.</p>
-            </div>
-          </div>
-
-          <label>
-            Role / technology <b>*</b>
-            <input name="role" required placeholder="e.g. Java Developer" />
-          </label>
-          <label>
-            Number of candidates <b>*</b>
-            <input name="candidateCount" required type="number" min="1" step="1" placeholder="e.g. 10" />
-          </label>
-          <label>
-            Hiring location
-            <input name="location" placeholder="City, state or multiple locations" />
-          </label>
-          <label>
-            Expected hiring date
-            <input name="hiringDate" type="date" />
-          </label>
           <label className="form-wide">
             Work mode
             <select name="workMode" defaultValue="">
