@@ -71,7 +71,7 @@
     isolation: isolate;
     max-width: 1920px;
     margin: 0 auto;
-    padding: 98px var(--content-gutter) 32px;
+    padding: 98px var(--content-gutter) 96px;
     color: #edf5ff;
 }
 
@@ -81,13 +81,13 @@ section[id] {
 
 @media (max-width: 950px) {
     .page-content {
-        padding: 0 28px;
+        padding: 0 28px 96px;
     }
 }
 
 @media (max-width: 700px) {
     .page-content {
-        padding: 90px 18px 32px;
+        padding: 90px 18px 90px;
     }
 }
 

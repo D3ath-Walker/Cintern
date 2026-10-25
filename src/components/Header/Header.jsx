@@ -63,7 +63,7 @@ export default function Header() {
       <header className="site-header">
         <Brand />
 
-        <nav className={menuOpen ? 'nav nav--open' : 'nav'}>
+        <nav id="primary-navigation" aria-label="Main navigation" className={menuOpen ? 'nav nav--open' : 'nav'}>
           {navLinks.map(([sectionId, label]) => {
             const active = activeSection === sectionId;
 
@@ -89,6 +89,7 @@ export default function Header() {
           type="button"
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
           aria-expanded={menuOpen}
+          aria-controls="primary-navigation"
           onClick={() => setMenuOpen(!menuOpen)}
         >
           {menuOpen ? '×' : '☰'}

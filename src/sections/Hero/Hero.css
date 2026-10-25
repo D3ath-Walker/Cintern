@@ -1,3 +1,13 @@
+.hero__side-image-frame {
+    --side-image-glow-angle: 0deg;
+}
+
+@property --side-image-glow-angle {
+    syntax: '<angle>';
+    inherits: false;
+    initial-value: 0deg;
+}
+
 .hero {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -81,18 +91,18 @@
 .hero__side-image-frame::before {
     position: absolute;
     z-index: 0;
-    inset: 2px;
-    border-radius: inherit;
-    background: conic-gradient(from 0deg, #174f9b, #72cfff, #2878ed, #b3eaff, #174f9b);
+    inset: -7px;
+    border-radius: 28px;
+    background: conic-gradient(from var(--side-image-glow-angle), #174f9b, #72cfff, #2878ed, #b3eaff, #174f9b);
     content: "";
     filter: blur(13px);
     opacity: 0.82;
-    animation: side-image-border-rotation 5s linear infinite;
+    animation: side-image-glow-rotation 7s linear infinite;
     transition: background 250ms ease, opacity 250ms ease, filter 250ms ease;
 }
 
 .hero__side-image-frame:hover::before {
-    background: conic-gradient(from 0deg, #80500b, #ffe28a, #d99a20, #fff1bd, #80500b);
+    background: conic-gradient(from var(--side-image-glow-angle), #80500b, #ffe28a, #d99a20, #fff1bd, #80500b);
     filter: blur(15px);
     opacity: 0.95;
 }
@@ -106,9 +116,9 @@
     border-radius: 19px;
 }
 
-@keyframes side-image-border-rotation {
+@keyframes side-image-glow-rotation {
     to {
-        transform: rotate(1turn);
+        --side-image-glow-angle: 360deg;
     }
 }
 
@@ -184,6 +194,7 @@
 
 @media (max-width: 700px) {
     .hero {
+        grid-template-columns: 1fr;
         gap: 28px;
         min-height: 0;
         margin-top: -22px;
@@ -215,12 +226,36 @@
         width: calc(50% - 8px);
     }
 
+    .hero__side-image-frame {
+        width: min(100%, 520px);
+    }
+
     .stats-strip > div:nth-child(2) {
         border-right: 0;
     }
 }
 
 @media (max-width: 420px) {
+    .stats-strip {
+        grid-template-columns: 1fr;
+        gap: 12px;
+        margin-right: -18px;
+        margin-left: -18px;
+        padding-right: 18px;
+        padding-left: 18px;
+    }
+
+    .stats-strip > div,
+    .stats-strip > div:nth-child(2) {
+        padding: 8px 0;
+        border-right: 0;
+        border-bottom: 1px solid rgba(192, 219, 255, 0.18);
+    }
+
+    .stats-strip > div:last-child {
+        border-bottom: 0;
+    }
+
     .hero__actions {
         flex-direction: column;
         align-items: stretch;
