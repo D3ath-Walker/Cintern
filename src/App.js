@@ -1,12 +1,15 @@
 import './App.css';
+import './sections/RefreshBase.css';
 
-import Footer from './components/Footer/FooterDock';
+import FooterDock from './components/Footer/FooterDock';
 import Header from './components/Header/Header';
-import { Benefits, HiringChallenge, HowItWorks, PipelineSummary, WhyChiPi } from './sections/RefreshedSections';
+import HiringChallenge from './sections/HiringChallenge/HiringChallenge';
+import HowItWorks from './sections/HowItWorks/HowItWorks';
+import PipelineSummary from './sections/PipelineSummary/PipelineSummary';
+import WhyChiPi from './sections/WhyChiPi/WhyChiPi';
 import EmployerEnquiry from './sections/EmployerEnquiry/EmployerEnquiryUpdated';
 import Hero from './sections/Hero/Hero';
 
-const SHOW_FOOTER = true;
 
 export default function App() {
   return (
@@ -16,12 +19,11 @@ export default function App() {
         <Hero />
         <HiringChallenge />
         <HowItWorks />
-        <Benefits />
         <WhyChiPi />
         <PipelineSummary />
         <EmployerEnquiry />
       </main>
-      {SHOW_FOOTER && <Footer />}
+      <FooterDock />
     </div>
   );
 }

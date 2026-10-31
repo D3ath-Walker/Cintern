@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import { GOOGLE_FORM_URL } from '../../Data/siteLinks';
 import Brand from '../Brand/Brand';
 import Button from '../Button/Button';
 import './Header.css';
@@ -11,13 +12,13 @@ const navLinks = [
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
-  const [activeSection, setActiveSection] = useState('how-it-works');
+  const [activeSection, setActiveSection] = useState(null);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
     const updateActiveSection = () => {
       const activationLine = window.scrollY + window.innerHeight * 0.38;
-      let currentSection = 'how-it-works';
+      let currentSection = null;
 
       navLinks.forEach(([sectionId]) => {
         const section = document.getElementById(sectionId);
@@ -56,7 +57,7 @@ export default function Header() {
           <span>FOR IT COMPANIES</span>
         </div>
         <div className="topbar__right">
-          Reliable Talent <i /> Real Skills <i /> Future Ready
+          Save Time <i /> Save Cost <i /> Better Talents
         </div>
       </div>
 
@@ -79,8 +80,11 @@ export default function Header() {
               </a>
             );
           })}
-          <Button onClick={closeMenu}>
+          <Button href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer" onClick={closeMenu}>
             Share Hiring Requirement <span>→</span>
+          </Button>
+          <Button secondary href="#site-footer" onClick={closeMenu}>
+            Contact Us
           </Button>
         </nav>
 
