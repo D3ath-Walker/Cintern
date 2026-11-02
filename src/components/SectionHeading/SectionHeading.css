@@ -1,0 +1,28 @@
+.refresh-heading {
+    max-width: 730px;
+    margin: 0 auto 36px;
+    text-align: center;
+}
+
+.refresh-heading__eyebrow {
+    color: #9fc6ff;
+    font-size: 10px;
+    font-weight: 800;
+    letter-spacing: 1.2px;
+}
+
+.refresh-heading h2 {
+    margin: 12px 0;
+    color: var(--color-text, #edf5ff);
+    font-size: clamp(32px, 4.4vw, 52px);
+    line-height: 1.08;
+    letter-spacing: -0.04em;
+}
+
+.refresh-heading > p {
+    max-width: 620px;
+    margin: 0 auto;
+    color: var(--color-text-muted, #b7c7db);
+    font-size: 15px;
+    line-height: 1.7;
+}

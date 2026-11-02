@@ -1,65 +1,242 @@
 [
-  "Adsul Computer and Management Institute",
-  "Adsul Technical Campus, Chas",
-  "Aliah University",
-  "Amity University Patna",
-  "Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior",
-  "BBK College, Nagaon (Barpeta)",
-  "Birla Institute of Technology",
-  "BML Munjal University",
-  "Chaudhary Ranbir Singh University",
-  "College of Commerce, Arts and Science",
-  "Dr. A. P. J. Abdul Kalam UIT, Jhabua",
-  "Dr. Subhash University",
-  "FORE Academy Of Management Education",
-  "Galgotias University",
-  "GC Dhaliara",
-  "GGIMS",
-  "GGSESTC",
-  "GITAM",
-  "Goswami Ganesh Dutta Sanatan Dharma College, Rajpur",
-  "Government Polytechnic, Gandhinagar",
-  "Government Polytechnic, Hamirpur",
-  "Govind Ballabh Pant Institute of Engineering & Technology",
-  "Guru Gobind Singh Educational Society's Technical Campus",
-  "Guru Kashi University",
-  "I.T.S. Engineering College, Greater Noida",
-  "ICFAI University",
-  "IIITR",
-  "IIT Bhilai",
-  "IIT Bhubaneswar",
-  "IIT Patna",
-  "IITPatna and IIITRanchi",
-  "Impact College",
-  "INMANTEC Institution",
-  "Integral University",
-  "ITM University, Gwalior",
-  "Jharkhand Rai University",
-  "K.R. Mangalam University, Gurugram",
-  "Kaziranga University",
-  "Kingston College of Science",
-  "Kurukshetra University",
-  "Lalit Narayan Mishra College of Business Management",
-  "Laxmi Institute of Technology",
-  "Lingaya's Lalita Devi Institute of Management & Sciences",
-  "Modern College",
-  "MPEC",
-  "N B G S M College",
-  "Nalanda College of Engineering, Chandi",
-  "National Institute of Technology, Agartala",
-  "National Institute of Technology, Patna",
-  "Netaji Subhas University",
-  "NIET",
-  "Nirankari Baba Gurbachan Singh Memorial College",
-  "NIT Kurukshetra",
-  "O.P. Jindal University",
-  "RK University",
-  "RR Institute of Technology",
-  "RRSDCE Begusarai Bihar",
-  "S. Sinha College Aurangabad Bihar",
-  "Saharsa College of Engineering",
-  "Shree Swaminarayan University, Kalol",
-  "Shri Ramswaroop Memorial University",
-  "Sri Aurobindo Institute of Technology, Indore",
-  "STATE UNIVERSITY RAJJU BHAIYA . PRAYAGRAJ"
+    {
+        "name":  "Adsul Computer and Management Institute",
+        "logo":  "college-logos/Adsul Computer and Management Institute.avif"
+    },
+    {
+        "name":  "Adsul Technical Campus, Chas",
+        "logo":  "college-logos/Adsul Technical Campus, Chas.jpg"
+    },
+    {
+        "name":  "Aliah University",
+        "logo":  "college-logos/Aliah University.jpg"
+    },
+    {
+        "name":  "Amity University Patna",
+        "logo":  "college-logos/Amity University Patna.png"
+    },
+    {
+        "name":  "Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior",
+        "logo":  "college-logos/Atal Bihari Vajpayee Indian Institute of Information Technology and Management, Gwalior.jpg"
+    },
+    {
+        "name":  "BBK College, Nagaon (Barpeta)",
+        "logo":  "college-logos/BBK College, Nagaon (Barpeta).jpg"
+    },
+    {
+        "name":  "BML Munjal University",
+        "logo":  "college-logos/BML Munjal University.jpg"
+    },
+    {
+        "name":  "Chaudhary Ranbir Singh University",
+        "logo":  "college-logos/Chaudhary Ranbir Singh University.png"
+    },
+    {
+        "name":  "College of Commerce, Arts and Science",
+        "logo":  "college-logos/College of Commerce, Arts and Science.png"
+    },
+    {
+        "name":  "Dr. A. P. J. Abdul Kalam UIT, Jhabua",
+        "logo":  "college-logos/Dr. A. P. J. Abdul Kalam UIT, Jhabua.jpg"
+    },
+    {
+        "name":  "Dr. Subhash University",
+        "logo":  "college-logos/Dr. Subhash University.png"
+    },
+    {
+        "name":  "FORE Academy Of Management Education",
+        "logo":  "college-logos/FORE Academy Of Management Education.png"
+    },
+    {
+        "name":  "Galgotias University",
+        "logo":  "college-logos/Galgotias University.jpg"
+    },
+    {
+        "name":  "GC Dhaliara",
+        "logo":  "college-logos/GC Dhaliara.jpg"
+    },
+    {
+        "name":  "GGIMS",
+        "logo":  "college-logos/GGIMS.png"
+    },
+    {
+        "name":  "GGSESTC",
+        "logo":  "college-logos/GGSESTC.jpg"
+    },
+    {
+        "name":  "GITAM",
+        "logo":  "college-logos/GITAM.png"
+    },
+    {
+        "name":  "Goswami Ganesh Dutta Sanatan Dharma College, Rajpur",
+        "logo":  "college-logos/Goswami Ganesh Dutta Sanatan Dharma College, Rajpur.jpg"
+    },
+    {
+        "name":  "Government Polytechnic, Gandhinagar",
+        "logo":  "college-logos/Government Polytechnic, Gandhinagar.png"
+    },
+    {
+        "name":  "Government Polytechnic, Hamirpur",
+        "logo":  "college-logos/Government Polytechnic, Hamirpur.jpg"
+    },
+    {
+        "name":  "Govind Ballabh Pant Institute of Engineering \u0026 Technology",
+        "logo":  "college-logos/Govind Ballabh Pant Institute of Engineering \u0026 Technology.png"
+    },
+    {
+        "name":  "Guru Kashi University",
+        "logo":  "college-logos/Guru Kashi University.jpg"
+    },
+    {
+        "name":  "I.T.S. Engineering College, Greater Noida",
+        "logo":  "college-logos/I.T.S. Engineering College, Greater Noida.png"
+    },
+    {
+        "name":  "ICFAI University",
+        "logo":  "college-logos/ICFAI University.jpg"
+    },
+    {
+        "name":  "IIITR",
+        "logo":  "college-logos/IIITR.png"
+    },
+    {
+        "name":  "IIITRanchi",
+        "logo":  "college-logos/IIITRanchi.jpg"
+    },
+    {
+        "name":  "IIT Bhilai",
+        "logo":  "college-logos/IIT Bhilai.png"
+    },
+    {
+        "name":  "IIT Bhubaneswar",
+        "logo":  "college-logos/IIT Bhubaneswar.jpg"
+    },
+    {
+        "name":  "IIT Patna",
+        "logo":  "college-logos/IIT Patna.jpg"
+    },
+    {
+        "name":  "Impact College",
+        "logo":  "college-logos/Impact College.jpg"
+    },
+    {
+        "name":  "INMANTEC Institution",
+        "logo":  "college-logos/INMANTEC Institution.png"
+    },
+    {
+        "name":  "Integral University",
+        "logo":  "college-logos/Integral University.png"
+    },
+    {
+        "name":  "ITM University, Gwalior",
+        "logo":  "college-logos/ITM University, Gwalior.png"
+    },
+    {
+        "name":  "Jharkhand Rai University",
+        "logo":  "college-logos/Jharkhand Rai University.jpg"
+    },
+    {
+        "name":  "K.R. Mangalam University, Gurugram",
+        "logo":  "college-logos/K.R. Mangalam University, Gurugram.jpg"
+    },
+    {
+        "name":  "Kaziranga University",
+        "logo":  "college-logos/Kaziranga University.png"
+    },
+    {
+        "name":  "Kingston College of Science",
+        "logo":  "college-logos/Kingston College of Science.jpg"
+    },
+    {
+        "name":  "Kurukshetra University",
+        "logo":  "college-logos/Kurukshetra University.png"
+    },
+    {
+        "name":  "Lalit Narayan Mishra College of Business Management",
+        "logo":  "college-logos/Lalit Narayan Mishra College of Business Management.jpg"
+    },
+    {
+        "name":  "Laxmi Institute of Technology",
+        "logo":  "college-logos/Laxmi Institute of Technology.jpg"
+    },
+    {
+        "name":  "Lingaya\u0027s Lalita Devi Institute of Management \u0026 Sciences",
+        "logo":  "college-logos/Lingaya\u0027s Lalita Devi Institute of Management \u0026 Sciences.jpg"
+    },
+    {
+        "name":  "Modern College",
+        "logo":  "college-logos/Modern College.jpg"
+    },
+    {
+        "name":  "MPEC",
+        "logo":  "college-logos/MPEC.png"
+    },
+    {
+        "name":  "N B G S M College",
+        "logo":  "college-logos/N B G S M College.jpg"
+    },
+    {
+        "name":  "Nalanda College of Engineering, Chandi",
+        "logo":  "college-logos/Nalanda College of Engineering, Chandi.jpg"
+    },
+    {
+        "name":  "National Institute of Technology, Agartala",
+        "logo":  "college-logos/National Institute of Technology, Agartala.jpg"
+    },
+    {
+        "name":  "National Institute of Technology, Patna",
+        "logo":  "college-logos/National Institute of Technology, Patna.png"
+    },
+    {
+        "name":  "Netaji Subhas University",
+        "logo":  "college-logos/Netaji Subhas University.png"
+    },
+    {
+        "name":  "NIET",
+        "logo":  "college-logos/NIET.png"
+    },
+    {
+        "name":  "NIT Kurukshetra",
+        "logo":  "college-logos/NIT Kurukshetra.png"
+    },
+    {
+        "name":  "O.P. Jindal University",
+        "logo":  "college-logos/O.P. Jindal University.png"
+    },
+    {
+        "name":  "RK University",
+        "logo":  "college-logos/RK University.png"
+    },
+    {
+        "name":  "RR Institute of Technology",
+        "logo":  "college-logos/RR Institute of Technology.jpg"
+    },
+    {
+        "name":  "RRSDCE Begusarai Bihar",
+        "logo":  "college-logos/RRSDCE Begusarai Bihar.jpg"
+    },
+    {
+        "name":  "S. Sinha College Aurangabad Bihar",
+        "logo":  "college-logos/S. Sinha College Aurangabad Bihar.png"
+    },
+    {
+        "name":  "Saharsa College of Engineering",
+        "logo":  "college-logos/Saharsa College of Engineering.png"
+    },
+    {
+        "name":  "Shree Swaminarayan University, Kalol",
+        "logo":  "college-logos/Shree Swaminarayan University, Kalol.jpg"
+    },
+    {
+        "name":  "Shri Ramswaroop Memorial University",
+        "logo":  "college-logos/Shri Ramswaroop Memorial University.jpg"
+    },
+    {
+        "name":  "Sri Aurobindo Institute of Technology, Indore",
+        "logo":  "college-logos/Sri Aurobindo Institute of Technology, Indore.jpg"
+    },
+    {
+        "name":  "STATE UNIVERSITY RAJJU BHAIYA . PRAYAGRAJ",
+        "logo":  "college-logos/STATE UNIVERSITY RAJJU BHAIYA . PRAYAGRAJ.png"
+    }
 ]

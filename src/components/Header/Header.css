@@ -59,10 +59,22 @@
     justify-content: space-between;
 
     background: rgba(5, 18, 35, 0.58);
-    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2);
+    box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2), 0 3px 18px rgba(255, 209, 102, 0.12);
+    animation: header-gold-glow 3.2s ease-in-out infinite;
     color: #edf5ff;
     -webkit-backdrop-filter: blur(22px) saturate(145%);
     backdrop-filter: blur(22px) saturate(145%);
+}
+
+@keyframes header-gold-glow {
+    0%,
+    100% {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2), 0 2px 10px rgba(255, 209, 102, 0.08);
+    }
+
+    50% {
+        box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2), 0 3px 24px rgba(255, 209, 102, 0.25);
+    }
 }
 
 .site-header .brand__mark {
@@ -72,7 +84,7 @@
 .nav {
     display: flex;
     align-items: center;
-    gap: 27px;
+    gap: clamp(10px, 1.5vw, 22px);
 }
 
 .nav__link {
@@ -118,6 +130,13 @@
     min-height: 38px;
     padding: 0 17px;
     font-size: 10px;
+    white-space: nowrap;
+}
+
+.nav .button--secondary {
+    border-color: rgba(192, 219, 255, 0.34);
+    background: rgba(215, 233, 255, 0.08);
+    color: #edf5ff;
 }
 
 .menu-toggle {
@@ -199,5 +218,11 @@
 
     .nav--open .button {
         min-height: 44px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .site-header {
+        animation: none;
     }
 }
