@@ -15,7 +15,7 @@
     align-items: center;
     min-height: clamp(500px, 60vw, 720px);
     margin-top: -58px;
-    padding: clamp(46px, 6vw, 84px) 0;
+    padding: 98px 0 clamp(46px, 6vw, 84px);
 }
 
 .hero__copy {
@@ -296,6 +296,10 @@
 }
 
 @media (min-width: 1200px) {
+    .hero {
+        padding-top: 84px;
+    }
+
     .hero__checks {
         font-size: 15px;
     }
