@@ -3,6 +3,10 @@ import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
 
+beforeEach(() => {
+  jest.spyOn(window.HTMLMediaElement.prototype, 'play').mockResolvedValue();
+});
+
 test('introduces the fresher hiring pipeline and links to the employer form', () => {
   render(<App />);
 
@@ -26,7 +30,8 @@ test('does not mark a navigation section active before it enters the viewport', 
   try {
     render(<App />);
 
-    expect(screen.getByRole('link', { name: 'How It Works' })).not.toHaveAttribute('aria-current');
+    const nav = screen.getByRole('navigation', { name: 'Main navigation' });
+    expect(within(nav).getByRole('link', { name: 'How It Works' })).not.toHaveAttribute('aria-current');
   } finally {
     getBoundingClientRect.mockRestore();
   }
