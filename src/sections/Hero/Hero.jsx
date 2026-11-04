@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 import Button from '../../components/Button/Button';
 import sideImage from '../../assets/images/side1.png';
 import './Hero.css';
@@ -17,8 +17,50 @@ const stats = [
 
 export default function Hero() {
   const videoRef = useRef(null);
+  const videoWasPlayingRef = useRef(false);
+  const videoHasEnteredViewportRef = useRef(false);
+  const [videoVisible, setVideoVisible] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
-  const [videoMuted, setVideoMuted] = useState(false);
+  const [videoMuted, setVideoMuted] = useState(true);
+
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video) return undefined;
+
+    if (!('IntersectionObserver' in window)) {
+      setVideoVisible(true);
+      return undefined;
+    }
+
+    const observer = new IntersectionObserver(([entry]) => {
+      const isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
+      setVideoVisible(isVisible);
+
+      if (!isVisible) {
+        videoWasPlayingRef.current = !video.paused;
+        if (!video.paused) video.pause();
+      }
+    }, { threshold: [0, 0.25] });
+
+    observer.observe(video);
+    return () => observer.disconnect();
+  }, []);
+
+  useEffect(() => {
+    if (!videoVisible) return;
+
+    const video = videoRef.current;
+    if (!video) return;
+
+    const shouldStartPlayback =
+      !videoHasEnteredViewportRef.current || videoWasPlayingRef.current;
+    videoHasEnteredViewportRef.current = true;
+
+    if (shouldStartPlayback) {
+      videoWasPlayingRef.current = false;
+      video.play().catch(() => setVideoPlaying(false));
+    }
+  }, [videoVisible]);
 
   const toggleVideoPlayback = () => {
     const video = videoRef.current;
@@ -63,16 +105,17 @@ export default function Hero() {
           <video
             ref={videoRef}
             className="hero__side-video"
-            autoPlay
             muted={videoMuted}
             loop
             playsInline
-            preload="metadata"
+            preload={videoVisible ? 'metadata' : 'none'}
             aria-label="ChiPi Technologies talent pipeline introduction"
             onPlay={() => setVideoPlaying(true)}
             onPause={() => setVideoPlaying(false)}
           >
-            <source src={`${process.env.PUBLIC_URL}/hero-video.mp4`} type="video/mp4" />
+            {videoVisible && (
+              <source src={`${process.env.PUBLIC_URL}/hero-video.mp4`} type="video/mp4" />
+            )}
           </video>
           <img
             className={`hero__side-poster${videoPlaying ? ' hero__side-poster--hidden' : ''}`}

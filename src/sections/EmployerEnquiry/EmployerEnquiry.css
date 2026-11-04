@@ -1,4 +1,4 @@
-.employer-enquiry-updated {
+﻿.employer-enquiry {
     position: relative;
     isolation: isolate;
     margin: clamp(50px, 8vw, 100px) 0 30px;
@@ -12,7 +12,7 @@
     color: var(--color-text, #edf5ff);
 }
 
-.employer-enquiry-updated::before {
+.employer-enquiry::before {
     position: absolute;
     z-index: -1;
     inset: 0;
@@ -21,7 +21,7 @@
     pointer-events: none;
 }
 
-.employer-enquiry-updated__decoration {
+.employer-enquiry__decoration {
     position: absolute;
     z-index: -1;
     inset: 0;
@@ -29,7 +29,7 @@
     pointer-events: none;
 }
 
-.employer-enquiry-updated__orbit {
+.employer-enquiry__orbit {
     position: absolute;
     width: 320px;
     height: 150px;
@@ -38,7 +38,7 @@
     transform: rotate(28deg);
 }
 
-.employer-enquiry-updated__orbit::before, .employer-enquiry-updated__orbit::after {
+.employer-enquiry__orbit::before, .employer-enquiry__orbit::after {
     position: absolute;
     width: 8px;
     height: 8px;
@@ -48,35 +48,35 @@
     content: "";
 }
 
-.employer-enquiry-updated__orbit::before {
+.employer-enquiry__orbit::before {
     top: 10px;
     left: 60px;
 }
 
-.employer-enquiry-updated__orbit::after {
+.employer-enquiry__orbit::after {
     right: 32px;
     bottom: 18px;
     background: #ffc53d;
     box-shadow: 0 0 14px 3px rgba(255, 189, 38, 0.42);
 }
 
-.employer-enquiry-updated__orbit--left {
+.employer-enquiry__orbit--left {
     top: 18%;
     left: -190px;
 }
 
-.employer-enquiry-updated__orbit--right {
+.employer-enquiry__orbit--right {
     top: 23%;
     right: -210px;
     transform: rotate(-25deg);
 }
 
-.employer-enquiry-updated__orbit--right::before {
+.employer-enquiry__orbit--right::before {
     background: #21d9ff;
     box-shadow: 0 0 15px 4px rgba(33, 217, 255, 0.48);
 }
 
-.employer-enquiry-updated__dot-grid {
+.employer-enquiry__dot-grid {
     position: absolute;
     width: 118px;
     height: 118px;
@@ -85,24 +85,24 @@
     opacity: 0.65;
 }
 
-.employer-enquiry-updated__dot-grid--left {
+.employer-enquiry__dot-grid--left {
     top: 50px;
     left: 9%;
 }
 
-.employer-enquiry-updated__dot-grid--right {
+.employer-enquiry__dot-grid--right {
     top: 36%;
     right: 2%;
 }
 
-.employer-enquiry-updated__intro {
+.employer-enquiry__intro {
     position: relative;
     max-width: 850px;
     margin: 0 auto;
     text-align: center;
 }
 
-.employer-enquiry-updated__badge {
+.employer-enquiry__badge {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -119,14 +119,14 @@
     letter-spacing: 1.05px;
 }
 
-.employer-enquiry-updated__badge svg {
+.employer-enquiry__badge svg {
     width: 22px;
     height: 22px;
     fill: #39a5ff;
     filter: drop-shadow(0 0 7px rgba(58, 160, 255, 0.55));
 }
 
-.employer-enquiry-updated__intro h2 {
+.employer-enquiry__intro h2 {
     margin: 14px 0 15px;
     background: linear-gradient(100deg, #fff 14%, #d9eaff 52%, #368eff 90%);
     background-clip: text;
@@ -138,7 +138,7 @@
     -webkit-background-clip: text;
 }
 
-.employer-enquiry-updated__intro p {
+.employer-enquiry__intro p {
     max-width: 780px;
     margin: 0 auto;
     color: #d5e4f8;
@@ -147,7 +147,7 @@
     text-wrap: balance;
 }
 
-.employer-enquiry-updated__form-button {
+.employer-enquiry__form-button {
     display: inline-flex;
     align-items: center;
     justify-content: center;
@@ -168,23 +168,23 @@
     transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
-.employer-enquiry-updated__form-button:hover {
+.employer-enquiry__form-button:hover {
     transform: translateY(-2px);
     box-shadow: 0 16px 34px rgba(255, 174, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.6);
     filter: brightness(1.04);
 }
 
-.employer-enquiry-updated__form-button:focus-visible, .employer-enquiry-updated__list-button:focus-visible, .employer-enquiry-updated__modal-close:focus-visible {
+.employer-enquiry__form-button:focus-visible, .employer-enquiry__list-button:focus-visible, .employer-enquiry__ticker-toggle:focus-visible, .employer-enquiry__modal-close:focus-visible {
     outline: 3px solid #9bd1ff;
     outline-offset: 4px;
 }
 
-.employer-enquiry-updated__form-button:disabled {
+.employer-enquiry__form-button:disabled {
     cursor: not-allowed;
     opacity: 0.72;
 }
 
-.employer-enquiry-updated__list-button {
+.employer-enquiry__list-button {
     display: flex;
     align-items: center;
     justify-content: center;
@@ -201,22 +201,22 @@
     transition: color 160ms ease, border-color 160ms ease;
 }
 
-.employer-enquiry-updated__list-button:hover {
+.employer-enquiry__list-button:hover {
     color: #ffd166;
     border-color: #ffd166;
 }
 
-.employer-enquiry-updated__colleges {
+.employer-enquiry__colleges {
     position: relative;
     margin: clamp(34px, 4vw, 48px) calc(clamp(24px, 3.2vw, 64px) * -0.5) 0;
 }
 
-.employer-enquiry-updated__college-heading {
+.employer-enquiry__college-heading {
     margin: 0 0 18px;
     padding: 0 clamp(24px, 3.2vw, 64px);
 }
 
-.employer-enquiry-updated__eyebrow {
+.employer-enquiry__eyebrow {
     display: block;
     color: #3998ff;
     font-size: 12px;
@@ -224,7 +224,7 @@
     letter-spacing: 1.05px;
 }
 
-.employer-enquiry-updated__college-heading h3 {
+.employer-enquiry__college-heading h3 {
     margin: 8px 0 0;
     color: #f4f8ff;
     font-size: clamp(21px, 2vw, 29px);
@@ -232,7 +232,24 @@
     letter-spacing: -0.025em;
 }
 
-.employer-enquiry-updated__ticker {
+.employer-enquiry__ticker-toggle {
+    margin-top: 12px;
+    padding: 7px 11px;
+    border: 1px solid rgba(136, 190, 255, 0.55);
+    border-radius: 999px;
+    background: rgba(215, 233, 255, 0.06);
+    color: #e4efff;
+    cursor: pointer;
+    font: inherit;
+    font-size: 13px;
+}
+
+.employer-enquiry__ticker-toggle:hover {
+    border-color: #ffd166;
+    color: #ffd166;
+}
+
+.employer-enquiry__ticker {
     position: relative;
     overflow: hidden;
     padding: 9px 0 10px;
@@ -243,13 +260,17 @@
     mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent);
 }
 
-.employer-enquiry-updated__track {
+.employer-enquiry__track {
     display: flex;
     width: max-content;
     animation: college-ticker-right 120s linear infinite;
 }
 
-.employer-enquiry-updated__college-group {
+.employer-enquiry__track--paused {
+    animation-play-state: paused;
+}
+
+.employer-enquiry__college-group {
     display: flex;
     flex: none;
     align-items: center;
@@ -257,7 +278,7 @@
     padding: 0 8px;
 }
 
-.employer-enquiry-updated__college {
+.employer-enquiry__college {
     display: inline-flex;
     flex-direction: column;
     align-items: center;
@@ -278,7 +299,7 @@
     white-space: normal;
 }
 
-.employer-enquiry-updated__college-logo {
+.employer-enquiry__college-logo {
     display: block;
     flex: none;
     width: 44px;
@@ -300,12 +321,12 @@
 }
 
 @media (hover: hover) {
-    .employer-enquiry-updated__ticker:hover .employer-enquiry-updated__track {
+    .employer-enquiry__ticker:hover .employer-enquiry__track {
         animation-play-state: paused;
     }
 }
 
-.employer-enquiry-updated__modal-layer {
+.employer-enquiry__modal-layer {
     position: fixed;
     z-index: 1000;
     inset: 0;
@@ -317,7 +338,7 @@
     backdrop-filter: blur(8px);
 }
 
-.employer-enquiry-updated__modal {
+.employer-enquiry__modal {
     position: relative;
     width: min(100%, 620px);
     max-height: min(72vh, 600px);
@@ -332,27 +353,27 @@
     color: #edf5ff;
 }
 
-.employer-enquiry-updated__modal::-webkit-scrollbar {
+.employer-enquiry__modal::-webkit-scrollbar {
     width: 8px;
 }
 
-.employer-enquiry-updated__modal::-webkit-scrollbar-track {
+.employer-enquiry__modal::-webkit-scrollbar-track {
     margin: 14px 0;
     border-radius: 999px;
     background: rgba(3, 19, 38, 0.92);
 }
 
-.employer-enquiry-updated__modal::-webkit-scrollbar-thumb {
+.employer-enquiry__modal::-webkit-scrollbar-thumb {
     border: 2px solid rgba(3, 19, 38, 0.92);
     border-radius: 999px;
     background: linear-gradient(180deg, rgba(103, 184, 255, 0.9), rgba(42, 119, 201, 0.9));
 }
 
-.employer-enquiry-updated__modal::-webkit-scrollbar-thumb:hover {
+.employer-enquiry__modal::-webkit-scrollbar-thumb:hover {
     background: linear-gradient(180deg, #91d2ff, #4e9ce8);
 }
 
-.employer-enquiry-updated__modal-close {
+.employer-enquiry__modal-close {
     position: absolute;
     top: 14px;
     right: 14px;
@@ -368,14 +389,14 @@
     font-size: 24px;
 }
 
-.employer-enquiry-updated__modal h3 {
+.employer-enquiry__modal h3 {
     max-width: calc(100% - 36px);
     margin: 10px 0 20px;
     font-size: clamp(24px, 4vw, 32px);
     line-height: 1.2;
 }
 
-.employer-enquiry-updated__modal ul {
+.employer-enquiry__modal ul {
     display: grid;
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 10px;
@@ -384,7 +405,7 @@
     list-style: none;
 }
 
-.employer-enquiry-updated__modal li {
+.employer-enquiry__modal li {
     display: flex;
     align-items: center;
     gap: 11px;
@@ -398,46 +419,46 @@
     line-height: 1.4;
 }
 
-.employer-enquiry-updated__modal .employer-enquiry-updated__college-logo {
+.employer-enquiry__modal .employer-enquiry__college-logo {
     width: 42px;
     height: 42px;
 }
 
 @media (max-width: 700px) {
-    .employer-enquiry-updated {
+    .employer-enquiry {
         min-height: 0;
         padding: 32px 0 30px;
         border-radius: 22px;
     }
-    .employer-enquiry-updated__intro {
+    .employer-enquiry__intro {
         padding: 0 18px;
     }
-    .employer-enquiry-updated__badge {
+    .employer-enquiry__badge {
         min-height: 38px;
         gap: 9px;
         padding: 0 14px;
         font-size: 10px;
     }
-    .employer-enquiry-updated__intro h2 {
+    .employer-enquiry__intro h2 {
         margin: 19px 0 14px;
         font-size: clamp(36px, 10vw, 52px);
     }
-    .employer-enquiry-updated__intro p {
+    .employer-enquiry__intro p {
         font-size: 16px;
     }
-    .employer-enquiry-updated__form-button {
+    .employer-enquiry__form-button {
         min-height: 52px;
         margin-top: 20px;
         padding: 0 20px;
     }
-    .employer-enquiry-updated__colleges {
+    .employer-enquiry__colleges {
         margin: 34px 0 0;
     }
-    .employer-enquiry-updated__college-heading {
+    .employer-enquiry__college-heading {
         padding: 0 20px;
         margin-bottom: 14px;
     }
-    .employer-enquiry-updated__college {
+    .employer-enquiry__college {
         min-height: 94px;
         width: 140px;
         max-width: 170px;
@@ -446,35 +467,36 @@
         border-radius: 15px;
         font-size: 12px;
     }
-    .employer-enquiry-updated__college-logo {
+    .employer-enquiry__college-logo {
         width: 40px;
         height: 40px;
     }
-    .employer-enquiry-updated__college-group {
+    .employer-enquiry__college-group {
         gap: 10px;
     }
-    .employer-enquiry-updated__ticker {
+    .employer-enquiry__ticker {
         padding: 9px 0 11px;
     }
-    .employer-enquiry-updated__dot-grid {
+    .employer-enquiry__dot-grid {
         opacity: 0.32;
     }
-    .employer-enquiry-updated__orbit {
+    .employer-enquiry__orbit {
         opacity: 0.65;
     }
-    .employer-enquiry-updated__modal {
+    .employer-enquiry__modal {
         max-height: min(72vh, 520px);
     }
-    .employer-enquiry-updated__modal ul {
+    .employer-enquiry__modal ul {
         grid-template-columns: 1fr;
     }
 }
 
 @media (prefers-reduced-motion: reduce) {
-    .employer-enquiry-updated__track {
+    .employer-enquiry__track {
         animation: none;
     }
-    .employer-enquiry-updated__form-button {
+    .employer-enquiry__form-button {
         transition: none;
     }
 }
+

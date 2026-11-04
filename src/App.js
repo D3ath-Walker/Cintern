@@ -7,7 +7,7 @@ import HiringChallenge from './sections/HiringChallenge/HiringChallenge';
 import HowItWorks from './sections/HowItWorks/HowItWorks';
 import PipelineSummary from './sections/PipelineSummary/PipelineSummary';
 import WhyChiPi from './sections/WhyChiPi/WhyChiPi';
-import EmployerEnquiry from './sections/EmployerEnquiry/EmployerEnquiryUpdated';
+import EmployerEnquiry from './sections/EmployerEnquiry/EmployerEnquiry';
 import Hero from './sections/Hero/Hero';
 
 
