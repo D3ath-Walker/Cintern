@@ -1,8 +1,7 @@
-@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap");
 :root {
     font-family: Inter, Arial, sans-serif;
-    color: #10233e;
-    background: #021732;
+    color: rgb(var(--rgb-navy-16));
+    background: rgb(var(--rgb-navy-8));
     font-synthesis: none;
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
@@ -15,8 +14,10 @@
     box-sizing: border-box;
 }
 
-html {
-    scroll-behavior: smooth;
+@media (prefers-reduced-motion: no-preference) {
+    html {
+        scroll-behavior: smooth;
+    }
 }
 
 body {
@@ -35,9 +36,18 @@ a {
     color: inherit;
 }
 
+.noscript-message {
+    padding: var(--content-gutter);
+    color: var(--color-text);
+}
+
 ::selection {
-    background: #cfe2ff;
-    color: #09244a;
+    background: rgb(var(--rgb-blue-92));
+    color: rgb(var(--rgb-navy-16));
+}
+
+html {
+    scrollbar-gutter: stable;
 }
 
 html, body, #root {

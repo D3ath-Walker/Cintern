@@ -1,48 +1,63 @@
-import { useEffect, useState } from 'react';
-import { GOOGLE_FORM_URL } from '../../Data/siteLinks';
+import { useEffect, useRef, useState } from 'react';
+import { GOOGLE_FORM_URL, SECTION_LINKS } from '../../data/siteLinks';
 import Brand from '../Brand/Brand';
 import Button from '../Button/Button';
 import './Header.css';
 
-const navLinks = [
-  ['how-it-works', 'How It Works'],
-  ['why-chip', 'Why ChiPi'],
-  ['enquiry', 'Employer Enquiry'],
-];
+const headerLinks = SECTION_LINKS.filter((link) => link.inHeader);
 
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+  const menuToggleRef = useRef(null);
   const closeMenu = () => setMenuOpen(false);
 
   useEffect(() => {
+    let frameId = null;
+
     const updateActiveSection = () => {
-      const activationLine = window.scrollY + window.innerHeight * 0.38;
+      frameId = null;
+      const activationLine = Math.min(window.innerHeight * 0.38, 320);
       let currentSection = null;
 
-      navLinks.forEach(([sectionId]) => {
-        const section = document.getElementById(sectionId);
+      SECTION_LINKS.forEach(({ id }) => {
+        const section = document.getElementById(id);
 
-        if (
-          section &&
-          section.getBoundingClientRect().top + window.scrollY <= activationLine
-        ) {
-          currentSection = sectionId;
+        if (section && section.getBoundingClientRect().top <= activationLine) {
+          currentSection = id;
         }
       });
 
       setActiveSection(currentSection);
     };
 
+    const scheduleUpdate = () => {
+      if (frameId === null) frameId = window.requestAnimationFrame(updateActiveSection);
+    };
+
     updateActiveSection();
-    window.addEventListener('scroll', updateActiveSection, { passive: true });
-    window.addEventListener('resize', updateActiveSection);
+    window.addEventListener('scroll', scheduleUpdate, { passive: true });
+    window.addEventListener('resize', scheduleUpdate);
 
     return () => {
-      window.removeEventListener('scroll', updateActiveSection);
-      window.removeEventListener('resize', updateActiveSection);
+      if (frameId !== null) window.cancelAnimationFrame(frameId);
+      window.removeEventListener('scroll', scheduleUpdate);
+      window.removeEventListener('resize', scheduleUpdate);
     };
   }, []);
+
+  useEffect(() => {
+    if (!menuOpen) return undefined;
+
+    const closeOnEscape = (event) => {
+      if (event.key !== 'Escape') return;
+      setMenuOpen(false);
+      menuToggleRef.current?.focus();
+    };
+
+    window.addEventListener('keydown', closeOnEscape);
+    return () => window.removeEventListener('keydown', closeOnEscape);
+  }, [menuOpen]);
 
   const handleNavClick = (sectionId) => {
     setActiveSection(sectionId);
@@ -64,31 +79,8 @@ export default function Header() {
       <header className="site-header">
         <Brand />
 
-        <nav id="primary-navigation" aria-label="Main navigation" className={menuOpen ? 'nav nav--open' : 'nav'}>
-          {navLinks.map(([sectionId, label]) => {
-            const active = activeSection === sectionId;
-
-            return (
-              <a
-                key={sectionId}
-                href={`#${sectionId}`}
-                className={active ? 'nav__link nav__link--active' : 'nav__link'}
-                aria-current={active ? 'location' : undefined}
-                onClick={() => handleNavClick(sectionId)}
-              >
-                {label}
-              </a>
-            );
-          })}
-          <Button href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer" onClick={closeMenu}>
-            Share Hiring Requirement <span>→</span>
-          </Button>
-          <Button secondary href="#site-footer" onClick={closeMenu}>
-            Contact Us
-          </Button>
-        </nav>
-
         <button
+          ref={menuToggleRef}
           className="menu-toggle"
           type="button"
           aria-label={menuOpen ? 'Close navigation' : 'Open navigation'}
@@ -98,6 +90,30 @@ export default function Header() {
         >
           {menuOpen ? '×' : '☰'}
         </button>
+
+        <nav id="primary-navigation" aria-label="Main navigation" className={menuOpen ? 'nav nav--open' : 'nav'}>
+          {headerLinks.map(({ id, label }) => {
+            const active = activeSection === id;
+
+            return (
+              <a
+                key={id}
+                href={`#${id}`}
+                className={active ? 'nav__link nav__link--active' : 'nav__link'}
+                aria-current={active ? 'location' : undefined}
+                onClick={() => handleNavClick(id)}
+              >
+                {label}
+              </a>
+            );
+          })}
+          <Button href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer" onClick={closeMenu}>
+            Share Hiring Requirement <span aria-hidden="true">→</span>
+          </Button>
+          <Button secondary href="#site-footer" onClick={closeMenu}>
+            Contact Us
+          </Button>
+        </nav>
       </header>
     </>
   );

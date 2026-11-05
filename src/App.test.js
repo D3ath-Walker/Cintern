@@ -1,11 +1,6 @@
-import '@testing-library/jest-dom';
 import { fireEvent, render, screen, within } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import App from './App';
-
-beforeEach(() => {
-  jest.spyOn(window.HTMLMediaElement.prototype, 'play').mockResolvedValue();
-});
 
 test('introduces the fresher hiring pipeline and links to the employer form', () => {
   render(<App />);
@@ -56,4 +51,15 @@ test('opens the college list, traps focus, and restores focus when closed', () =
 
   expect(screen.queryByRole('dialog')).not.toBeInTheDocument();
   expect(openButton).toHaveFocus();
+});
+
+test('offers a skip link as the first stop for keyboard users', () => {
+  render(<App />);
+
+  userEvent.tab();
+
+  const skipLink = screen.getByRole('link', { name: 'Skip to main content' });
+  expect(skipLink).toHaveFocus();
+  expect(skipLink).toHaveAttribute('href', '#main-content');
+  expect(screen.getByRole('main')).toHaveAttribute('id', 'main-content');
 });

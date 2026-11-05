@@ -1,11 +1,11 @@
 import SectionHeading from '../../components/SectionHeading/SectionHeading';
-import step1Image from '../../assets/images/s1.png';
-import step2Image from '../../assets/images/s2.png';
-import step3Image from '../../assets/images/s3.png';
-import step4Image from '../../assets/images/s4.png';
+import step1Image from '../../assets/images/s1.webp';
+import step2Image from '../../assets/images/s2.webp';
+import step3Image from '../../assets/images/s3.webp';
+import step4Image from '../../assets/images/s4.webp';
 import './HowItWorks.css';
 
-const process = [
+const steps = [
   {
     number: '01',
     title: 'Confirm the hiring brief',
@@ -38,23 +38,23 @@ const process = [
 
 export default function HowItWorks() {
   return (
-    <section className="refresh-section refresh-process" id="how-it-works" aria-labelledby="how-it-works-title">
+    <section className="content-section how-it-works" id="how-it-works" aria-labelledby="how-it-works-title">
       <SectionHeading
         id="how-it-works-title"
         eyebrow="A CLEAR, COLLABORATIVE PROCESS"
         title="How it works"
         description="One company-led process connects hiring requirements with campus talent, role-relevant preparation, and interview-ready candidates."
       />
-      <ol className="refresh-process__steps">
-        {process.map(({ number, title, description, image, imageAlt }) => (
-          <li className="refresh-card refresh-process__step" key={number}>
-            <div className="refresh-process__copy">
-              <span className="refresh-card__number">Step {number}</span>
+      <ol className="how-it-works__steps">
+        {steps.map(({ number, title, description, image, imageAlt }) => (
+          <li className="content-card how-it-works__step" key={number}>
+            <div className="how-it-works__copy">
+              <span className="content-card__number">Step {number}</span>
               <h3>{title}</h3>
               <p>{description}</p>
             </div>
-            <div className="refresh-process__image">
-              <img src={image} alt={imageAlt} />
+            <div className="how-it-works__image">
+              <img src={image} alt={imageAlt} loading="lazy" decoding="async" />
             </div>
           </li>
         ))}

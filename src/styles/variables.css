@@ -1,8 +1,106 @@
 :root {
+    /* Colour palette as "red, green, blue", so any shade can be used with any
+       opacity: rgba(var(--rgb-blue-88), 0.2). The number is the lightness (0-100). */
+    --rgb-black: 0, 0, 0;
+    --rgb-navy-4: 0, 7, 22;
+    --rgb-navy-8: 3, 19, 38;
+    --rgb-navy-13: 11, 31, 56;
+    --rgb-navy-16: 7, 36, 73;
+    --rgb-navy-21: 16, 52, 91;
+    --rgb-slate-45: 97, 112, 135;
+    --rgb-slate-83: 200, 210, 224;
+    --rgb-blue-27: 8, 67, 132;
+    --rgb-blue-35: 23, 79, 155;
+    --rgb-blue-36: 40, 85, 140;
+    --rgb-blue-38: 13, 92, 181;
+    --rgb-blue-44: 14, 102, 208;
+    --rgb-blue-48: 42, 119, 201;
+    --rgb-blue-51: 27, 127, 234;
+    --rgb-blue-55: 43, 139, 235;
+    --rgb-blue-57: 61, 137, 230;
+    --rgb-blue-59: 45, 135, 255;
+    --rgb-blue-61: 78, 156, 232;
+    --rgb-blue-62: 60, 151, 255;
+    --rgb-blue-63: 93, 152, 230;
+    --rgb-blue-65: 76, 151, 255;
+    --rgb-blue-66: 82, 166, 255;
+    --rgb-blue-71: 108, 174, 255;
+    --rgb-blue-75: 128, 183, 255;
+    --rgb-blue-78: 145, 210, 255;
+    --rgb-blue-81: 157, 189, 255;
+    --rgb-blue-83: 169, 206, 255;
+    --rgb-blue-88: 192, 219, 255;
+    --rgb-blue-92: 215, 233, 255;
+    --rgb-blue-96: 237, 245, 255;
+    --rgb-cyan-53: 40, 200, 232;
+    --rgb-cyan-56: 33, 217, 255;
+    --rgb-cyan-72: 114, 207, 255;
+    --rgb-cyan-82: 161, 242, 255;
+    --rgb-cyan-85: 179, 234, 255;
+    --rgb-violet-69: 111, 98, 255;
+    --rgb-gold-27: 128, 80, 11;
+    --rgb-gold-50: 217, 155, 37;
+    --rgb-gold-51: 255, 174, 0;
+    --rgb-gold-52: 227, 173, 40;
+    --rgb-gold-54: 255, 185, 20;
+    --rgb-gold-57: 255, 189, 38;
+    --rgb-gold-60: 229, 183, 76;
+    --rgb-gold-62: 255, 197, 61;
+    --rgb-gold-67: 255, 218, 86;
+    --rgb-gold-70: 255, 209, 102;
+    --rgb-gold-74: 255, 216, 121;
+    --rgb-gold-77: 255, 226, 138;
+    --rgb-gold-81: 255, 235, 160;
+    --rgb-gold-87: 255, 241, 189;
+    --rgb-white: 255, 255, 255;
+
+    /* What colours are for */
+    --color-text: rgb(var(--rgb-white));
+    --color-text-muted: rgb(var(--rgb-slate-83));
+    --color-gold: rgb(var(--rgb-gold-70));
+    --color-icon: rgb(var(--rgb-blue-75));
+    --color-focus: rgb(var(--rgb-blue-83));
+
+    /* Text sizes */
+    --text-xs: 12px;
+    --text-sm: 13px;
+    --text-md: 14px;
+    --text-base: 15px;
+    --text-lg: 16px;
+    --text-xl: 20px;
+    --text-2xl: 22px;
+    --text-3xl: 24px;
+
+    /* Corner radii */
+    --radius-sm: 12px;
+    --radius-md: 19px;
+    --radius-lg: 22px;
+    --radius-pill: 999px;
+    --radius-round: 50%;
+
+    /* Fixed header and page spacing */
+    --topbar-height: 30px;
+    --navbar-height: 68px;
+    --header-height: calc(var(--topbar-height) + var(--navbar-height));
     --content-gutter: clamp(20px, 5.2vw, 96px);
-    --color-text: #f1f6ff;
-    --color-text-muted: #c2d1e5;
-    --color-gold: #ffd66b;
-    --color-icon: #8dbdff;
+    --page-edge: max(var(--content-gutter), calc((100% - 1920px) / 2 + var(--content-gutter)));
+
+    /* Stacking order of the layers that sit above the page */
+    --z-header: 109;
+    --z-topbar: 110;
+    --z-skip-link: 120;
+    --z-dialog: 1000;
+}
+
+@media (max-width: 950px) {
+    :root {
+        --content-gutter: 28px;
+    }
+}
+
+@media (max-width: 700px) {
+    :root {
+        --content-gutter: 18px;
+    }
 }
 

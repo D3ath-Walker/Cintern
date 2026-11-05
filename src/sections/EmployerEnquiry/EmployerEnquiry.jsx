@@ -1,7 +1,8 @@
 import { useEffect, useRef, useState } from 'react';
 import { createPortal } from 'react-dom';
-import colleges from '../../Data/List of Colleges.json';
-import { GOOGLE_FORM_URL } from '../../Data/siteLinks';
+import Button from '../../components/Button/Button';
+import colleges from '../../data/colleges.json';
+import { GOOGLE_FORM_URL } from '../../data/siteLinks';
 import './EmployerEnquiry.css';
 
 function getCollegeLogoUrl(logoPath) {
@@ -57,6 +58,9 @@ export default function EmployerEnquiry() {
 
     const trigger = collegesTriggerRef.current;
     const previousActiveElement = document.activeElement;
+    const root = document.documentElement;
+    const previousOverflow = root.style.overflow;
+    root.style.overflow = 'hidden';
     const closeButton = collegesDialogRef.current?.querySelector('button');
     closeButton?.focus();
 
@@ -92,6 +96,7 @@ export default function EmployerEnquiry() {
     window.addEventListener('keydown', handleDialogKeyDown);
     return () => {
       window.removeEventListener('keydown', handleDialogKeyDown);
+      root.style.overflow = previousOverflow;
       if (trigger?.isConnected) trigger.focus();
       else if (previousActiveElement?.isConnected) previousActiveElement.focus();
     };
@@ -117,20 +122,9 @@ export default function EmployerEnquiry() {
           Share your academic and skills requirements through our form. We’ll use them to shape a
           fresher talent pool around your hiring needs.
         </p>
-        {GOOGLE_FORM_URL ? (
-          <a
-            className="employer-enquiry__form-button"
-            href={GOOGLE_FORM_URL}
-            target="_blank"
-            rel="noreferrer"
-          >
-            Fill in your hiring requirements <span aria-hidden="true">↗</span>
-          </a>
-        ) : (
-          <button className="employer-enquiry__form-button" type="button" disabled>
-            Google Form link coming soon
-          </button>
-        )}
+        <Button className="employer-enquiry__form-button" href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer">
+          Fill in your hiring requirements <span aria-hidden="true">↗</span>
+        </Button>
         <button
           className="employer-enquiry__list-button"
           type="button"
@@ -151,7 +145,6 @@ export default function EmployerEnquiry() {
           <button
             className="employer-enquiry__ticker-toggle"
             type="button"
-            aria-pressed={tickerPaused}
             onClick={() => setTickerPaused((paused) => !paused)}
           >
             {tickerPaused ? 'Resume college list' : 'Pause college list'}
