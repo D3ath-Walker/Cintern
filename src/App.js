@@ -1,7 +1,7 @@
 import './App.css';
-import './sections/RefreshBase.css';
+import './styles/sections.css';
 
-import FooterDock from './components/Footer/FooterDock';
+import Footer from './components/Footer/Footer';
 import Header from './components/Header/Header';
 import HiringChallenge from './sections/HiringChallenge/HiringChallenge';
 import HowItWorks from './sections/HowItWorks/HowItWorks';
@@ -14,8 +14,9 @@ import Hero from './sections/Hero/Hero';
 export default function App() {
   return (
     <div className="site-page">
+      <a className="skip-link" href="#main-content">Skip to main content</a>
       <Header />
-      <main className="page-content">
+      <main className="page-content" id="main-content" tabIndex={-1}>
         <Hero />
         <HiringChallenge />
         <HowItWorks />
@@ -23,7 +24,7 @@ export default function App() {
         <PipelineSummary />
         <EmployerEnquiry />
       </main>
-      <FooterDock />
+      <Footer />
     </div>
   );
 }

@@ -5,18 +5,18 @@
     min-height: 0;
     overflow: hidden;
     padding: clamp(34px, 4vw, 48px) clamp(24px, 3.2vw, 64px) 34px;
-    border: 1px solid rgba(60, 151, 255, 0.55);
+    border: 1px solid rgba(var(--rgb-blue-62), 0.55);
     border-radius: 30px;
-    background: radial-gradient(ellipse at 88% 4%, rgba(13, 92, 181, 0.34), transparent 43%), radial-gradient(ellipse at 2% 55%, rgba(8, 67, 132, 0.3), transparent 48%), linear-gradient(112deg, rgba(2, 19, 42, 0.98), rgba(3, 31, 68, 0.96) 58%, rgba(3, 39, 83, 0.98));
-    box-shadow: inset 0 1px 0 rgba(166, 212, 255, 0.08), 0 22px 64px rgba(0, 9, 25, 0.28);
-    color: var(--color-text, #edf5ff);
+    background: radial-gradient(ellipse at 88% 4%, rgba(var(--rgb-blue-38), 0.34), transparent 43%), radial-gradient(ellipse at 2% 55%, rgba(var(--rgb-blue-27), 0.3), transparent 48%), linear-gradient(112deg, rgba(var(--rgb-navy-8), 0.98), rgba(var(--rgb-navy-16), 0.96) 58%, rgba(var(--rgb-navy-16), 0.98));
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-blue-83), 0.08), 0 22px 64px rgba(var(--rgb-navy-8), 0.28);
+    color: var(--color-text);
 }
 
 .employer-enquiry::before {
     position: absolute;
     z-index: -1;
     inset: 0;
-    background: radial-gradient(ellipse at 50% 55%, rgba(0, 7, 22, 0.54), transparent 64%), linear-gradient(165deg, transparent 49%, rgba(18, 92, 178, 0.12) 49.2%, transparent 69%);
+    background: radial-gradient(ellipse at 50% 55%, rgba(var(--rgb-navy-4), 0.54), transparent 64%), linear-gradient(165deg, transparent 49%, rgba(var(--rgb-blue-38), 0.12) 49.2%, transparent 69%);
     content: "";
     pointer-events: none;
 }
@@ -33,8 +33,8 @@
     position: absolute;
     width: 320px;
     height: 150px;
-    border: 1px solid rgba(45, 135, 255, 0.22);
-    border-radius: 50%;
+    border: 1px solid rgba(var(--rgb-blue-59), 0.22);
+    border-radius: var(--radius-round);
     transform: rotate(28deg);
 }
 
@@ -42,9 +42,9 @@
     position: absolute;
     width: 8px;
     height: 8px;
-    border-radius: 50%;
-    background: #57a8ff;
-    box-shadow: 0 0 15px 4px rgba(65, 151, 255, 0.55);
+    border-radius: var(--radius-round);
+    background: rgb(var(--rgb-blue-66));
+    box-shadow: 0 0 15px 4px rgba(var(--rgb-blue-62), 0.55);
     content: "";
 }
 
@@ -56,8 +56,8 @@
 .employer-enquiry__orbit::after {
     right: 32px;
     bottom: 18px;
-    background: #ffc53d;
-    box-shadow: 0 0 14px 3px rgba(255, 189, 38, 0.42);
+    background: rgb(var(--rgb-gold-62));
+    box-shadow: 0 0 14px 3px rgba(var(--rgb-gold-57), 0.42);
 }
 
 .employer-enquiry__orbit--left {
@@ -72,15 +72,15 @@
 }
 
 .employer-enquiry__orbit--right::before {
-    background: #21d9ff;
-    box-shadow: 0 0 15px 4px rgba(33, 217, 255, 0.48);
+    background: rgb(var(--rgb-cyan-56));
+    box-shadow: 0 0 15px 4px rgba(var(--rgb-cyan-56), 0.48);
 }
 
 .employer-enquiry__dot-grid {
     position: absolute;
     width: 118px;
     height: 118px;
-    background-image: radial-gradient(rgba(27, 127, 234, 0.55) 1.7px, transparent 1.7px);
+    background-image: radial-gradient(rgba(var(--rgb-blue-51), 0.55) 1.7px, transparent 1.7px);
     background-size: 21px 21px;
     opacity: 0.65;
 }
@@ -109,12 +109,12 @@
     gap: 12px;
     min-height: 42px;
     padding: 0 22px;
-    border: 1px solid rgba(48, 157, 255, 0.58);
-    border-radius: 999px;
-    background: rgba(4, 48, 93, 0.48);
-    box-shadow: inset 0 1px 0 rgba(188, 225, 255, 0.06), 0 0 26px rgba(21, 116, 221, 0.12);
-    color: #e5f2ff;
-    font-size: 12px;
+    border: 1px solid rgba(var(--rgb-blue-62), 0.58);
+    border-radius: var(--radius-pill);
+    background: rgba(var(--rgb-navy-21), 0.48);
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-blue-88), 0.06), 0 0 26px rgba(var(--rgb-blue-51), 0.12);
+    color: rgb(var(--rgb-blue-92));
+    font-size: var(--text-xs);
     font-weight: 800;
     letter-spacing: 1.05px;
 }
@@ -122,17 +122,17 @@
 .employer-enquiry__badge svg {
     width: 22px;
     height: 22px;
-    fill: #39a5ff;
-    filter: drop-shadow(0 0 7px rgba(58, 160, 255, 0.55));
+    fill: rgb(var(--rgb-blue-62));
+    filter: drop-shadow(0 0 7px rgba(var(--rgb-blue-62), 0.55));
 }
 
 .employer-enquiry__intro h2 {
     margin: 14px 0 15px;
-    background: linear-gradient(100deg, #fff 14%, #d9eaff 52%, #368eff 90%);
+    background: linear-gradient(100deg, rgb(var(--rgb-white)) 14%, rgb(var(--rgb-blue-92)) 52%, rgb(var(--rgb-blue-62)) 90%);
     background-clip: text;
     color: transparent;
     font-size: clamp(40px, 5.2vw, 68px);
-    font-weight: 850;
+    font-weight: 800;
     letter-spacing: -0.055em;
     line-height: 1.02;
     -webkit-background-clip: text;
@@ -141,47 +141,28 @@
 .employer-enquiry__intro p {
     max-width: 780px;
     margin: 0 auto;
-    color: #d5e4f8;
+    color: rgb(var(--rgb-blue-92));
     font-size: clamp(15px, 1.35vw, 19px);
     line-height: 1.55;
     text-wrap: balance;
 }
 
 .employer-enquiry__form-button {
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
     gap: 14px;
     min-height: 56px;
     margin-top: 23px;
     padding: 0 clamp(24px, 3vw, 42px);
-    border: 1px solid rgba(255, 235, 160, 0.55);
+    border: 1px solid rgba(var(--rgb-gold-81), 0.55);
     border-radius: 13px;
-    background: linear-gradient(180deg, #ffda56, #ffb914);
-    box-shadow: 0 12px 28px rgba(255, 174, 0, 0.16), inset 0 1px 0 rgba(255, 255, 255, 0.52);
-    color: #081a31;
-    cursor: pointer;
-    font: inherit;
+    background: linear-gradient(180deg, rgb(var(--rgb-gold-67)), rgb(var(--rgb-gold-54)));
+    box-shadow: 0 12px 28px rgba(var(--rgb-gold-51), 0.16), inset 0 1px 0 rgba(var(--rgb-white), 0.52);
     font-size: clamp(15px, 1.2vw, 18px);
-    font-weight: 850;
-    text-decoration: none;
     transition: transform 180ms ease, box-shadow 180ms ease, filter 180ms ease;
 }
 
 .employer-enquiry__form-button:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 16px 34px rgba(255, 174, 0, 0.24), inset 0 1px 0 rgba(255, 255, 255, 0.6);
+    box-shadow: 0 16px 34px rgba(var(--rgb-gold-51), 0.24), inset 0 1px 0 rgba(var(--rgb-white), 0.6);
     filter: brightness(1.04);
-}
-
-.employer-enquiry__form-button:focus-visible, .employer-enquiry__list-button:focus-visible, .employer-enquiry__ticker-toggle:focus-visible, .employer-enquiry__modal-close:focus-visible {
-    outline: 3px solid #9bd1ff;
-    outline-offset: 4px;
-}
-
-.employer-enquiry__form-button:disabled {
-    cursor: not-allowed;
-    opacity: 0.72;
 }
 
 .employer-enquiry__list-button {
@@ -192,18 +173,18 @@
     margin: 12px auto 0;
     padding: 4px 7px 8px;
     border: 0;
-    border-bottom: 1px solid rgba(136, 190, 255, 0.7);
+    border-bottom: 1px solid rgba(var(--rgb-blue-75), 0.7);
     background: transparent;
-    color: #e4efff;
+    color: rgb(var(--rgb-blue-92));
     cursor: pointer;
     font: inherit;
-    font-size: 14px;
+    font-size: var(--text-md);
     transition: color 160ms ease, border-color 160ms ease;
 }
 
 .employer-enquiry__list-button:hover {
-    color: #ffd166;
-    border-color: #ffd166;
+    color: rgb(var(--rgb-gold-70));
+    border-color: rgb(var(--rgb-gold-70));
 }
 
 .employer-enquiry__colleges {
@@ -218,15 +199,15 @@
 
 .employer-enquiry__eyebrow {
     display: block;
-    color: #3998ff;
-    font-size: 12px;
-    font-weight: 850;
+    color: rgb(var(--rgb-blue-62));
+    font-size: var(--text-xs);
+    font-weight: 800;
     letter-spacing: 1.05px;
 }
 
 .employer-enquiry__college-heading h3 {
     margin: 8px 0 0;
-    color: #f4f8ff;
+    color: rgb(var(--rgb-white));
     font-size: clamp(21px, 2vw, 29px);
     font-weight: 800;
     letter-spacing: -0.025em;
@@ -235,29 +216,29 @@
 .employer-enquiry__ticker-toggle {
     margin-top: 12px;
     padding: 7px 11px;
-    border: 1px solid rgba(136, 190, 255, 0.55);
-    border-radius: 999px;
-    background: rgba(215, 233, 255, 0.06);
-    color: #e4efff;
+    border: 1px solid rgba(var(--rgb-blue-75), 0.55);
+    border-radius: var(--radius-pill);
+    background: rgba(var(--rgb-blue-92), 0.06);
+    color: rgb(var(--rgb-blue-92));
     cursor: pointer;
     font: inherit;
-    font-size: 13px;
+    font-size: var(--text-sm);
 }
 
 .employer-enquiry__ticker-toggle:hover {
-    border-color: #ffd166;
-    color: #ffd166;
+    border-color: rgb(var(--rgb-gold-70));
+    color: rgb(var(--rgb-gold-70));
 }
 
 .employer-enquiry__ticker {
     position: relative;
     overflow: hidden;
     padding: 9px 0 10px;
-    border-top: 1px solid rgba(60, 151, 255, 0.28);
-    border-bottom: 1px solid rgba(60, 151, 255, 0.34);
-    background: linear-gradient(90deg, rgba(7, 36, 73, 0.54), rgba(5, 30, 63, 0.77), rgba(7, 36, 73, 0.54));
-    box-shadow: 0 0 28px rgba(14, 102, 208, 0.18), inset 0 0 22px rgba(8, 86, 176, 0.1);
-    mask-image: linear-gradient(90deg, transparent, #000 2.5%, #000 97.5%, transparent);
+    border-top: 1px solid rgba(var(--rgb-blue-62), 0.28);
+    border-bottom: 1px solid rgba(var(--rgb-blue-62), 0.34);
+    background: linear-gradient(90deg, rgba(var(--rgb-navy-16), 0.54), rgba(var(--rgb-navy-16), 0.77), rgba(var(--rgb-navy-16), 0.54));
+    box-shadow: 0 0 28px rgba(var(--rgb-blue-44), 0.18), inset 0 0 22px rgba(var(--rgb-blue-38), 0.1);
+    mask-image: linear-gradient(90deg, transparent, rgb(var(--rgb-black)) 2.5%, rgb(var(--rgb-black)) 97.5%, transparent);
 }
 
 .employer-enquiry__track {
@@ -288,12 +269,12 @@
     min-height: 102px;
     max-width: 220px;
     padding: 8px 11px;
-    border: 1px solid rgba(43, 139, 235, 0.56);
-    border-radius: 19px;
-    background: linear-gradient(145deg, rgba(18, 58, 101, 0.88), rgba(5, 30, 62, 0.94));
-    box-shadow: inset 0 1px 0 rgba(209, 231, 255, 0.08), 0 5px 18px rgba(0, 7, 22, 0.22);
-    color: #f0f6ff;
-    font-size: 13px;
+    border: 1px solid rgba(var(--rgb-blue-55), 0.56);
+    border-radius: var(--radius-md);
+    background: linear-gradient(145deg, rgba(var(--rgb-navy-21), 0.88), rgba(var(--rgb-navy-16), 0.94));
+    box-shadow: inset 0 1px 0 rgba(var(--rgb-blue-92), 0.08), 0 5px 18px rgba(var(--rgb-navy-4), 0.22);
+    color: rgb(var(--rgb-blue-96));
+    font-size: var(--text-sm);
     line-height: 1.3;
     text-align: center;
     white-space: normal;
@@ -305,9 +286,9 @@
     width: 44px;
     height: 44px;
     padding: 4px;
-    border: 1px solid rgba(15, 54, 97, 0.1);
-    border-radius: 50%;
-    background: #fff;
+    border: 1px solid rgba(var(--rgb-navy-21), 0.1);
+    border-radius: var(--radius-round);
+    background: rgb(var(--rgb-white));
     object-fit: contain;
 }
 
@@ -328,12 +309,12 @@
 
 .employer-enquiry__modal-layer {
     position: fixed;
-    z-index: 1000;
+    z-index: var(--z-dialog);
     inset: 0;
     display: grid;
     place-items: center;
     padding: 18px;
-    background: rgba(1, 10, 21, 0.76);
+    background: rgba(var(--rgb-navy-4), 0.76);
     -webkit-backdrop-filter: blur(8px);
     backdrop-filter: blur(8px);
 }
@@ -344,13 +325,13 @@
     max-height: min(72vh, 600px);
     overflow-y: auto;
     scrollbar-width: thin;
-    scrollbar-color: rgba(82, 166, 255, 0.72) rgba(3, 19, 38, 0.92);
+    scrollbar-color: rgba(var(--rgb-blue-66), 0.72) rgba(var(--rgb-navy-8), 0.92);
     padding: clamp(22px, 3vw, 30px);
-    border: 1px solid rgba(82, 166, 255, 0.5);
-    border-radius: 22px;
-    background: linear-gradient(145deg, rgba(10, 42, 78, 0.99), rgba(3, 19, 38, 0.99));
-    box-shadow: 0 28px 90px rgba(0, 0, 0, 0.48), inset 0 1px rgba(255, 255, 255, 0.08);
-    color: #edf5ff;
+    border: 1px solid rgba(var(--rgb-blue-66), 0.5);
+    border-radius: var(--radius-lg);
+    background: linear-gradient(145deg, rgba(var(--rgb-navy-16), 0.99), rgba(var(--rgb-navy-8), 0.99));
+    box-shadow: 0 28px 90px rgba(var(--rgb-black), 0.48), inset 0 1px rgba(var(--rgb-white), 0.08);
+    color: rgb(var(--rgb-blue-96));
 }
 
 .employer-enquiry__modal::-webkit-scrollbar {
@@ -359,34 +340,35 @@
 
 .employer-enquiry__modal::-webkit-scrollbar-track {
     margin: 14px 0;
-    border-radius: 999px;
-    background: rgba(3, 19, 38, 0.92);
+    border-radius: var(--radius-pill);
+    background: rgba(var(--rgb-navy-8), 0.92);
 }
 
 .employer-enquiry__modal::-webkit-scrollbar-thumb {
-    border: 2px solid rgba(3, 19, 38, 0.92);
-    border-radius: 999px;
-    background: linear-gradient(180deg, rgba(103, 184, 255, 0.9), rgba(42, 119, 201, 0.9));
+    border: 2px solid rgba(var(--rgb-navy-8), 0.92);
+    border-radius: var(--radius-pill);
+    background: linear-gradient(180deg, rgba(var(--rgb-blue-71), 0.9), rgba(var(--rgb-blue-48), 0.9));
 }
 
 .employer-enquiry__modal::-webkit-scrollbar-thumb:hover {
-    background: linear-gradient(180deg, #91d2ff, #4e9ce8);
+    background: linear-gradient(180deg, rgb(var(--rgb-blue-78)), rgb(var(--rgb-blue-61)));
 }
 
 .employer-enquiry__modal-close {
-    position: absolute;
-    top: 14px;
-    right: 14px;
+    position: sticky;
+    z-index: 1;
+    top: 0;
+    float: right;
     display: grid;
     width: 38px;
     height: 38px;
     place-items: center;
-    border: 1px solid rgba(192, 219, 255, 0.22);
-    border-radius: 50%;
-    background: rgba(215, 233, 255, 0.08);
-    color: #e8f1ff;
+    border: 1px solid rgba(var(--rgb-blue-88), 0.22);
+    border-radius: var(--radius-round);
+    background: rgb(var(--rgb-navy-21));
+    color: rgb(var(--rgb-blue-96));
     cursor: pointer;
-    font-size: 24px;
+    font-size: var(--text-3xl);
 }
 
 .employer-enquiry__modal h3 {
@@ -411,11 +393,11 @@
     gap: 11px;
     min-height: 68px;
     padding: 10px 13px;
-    border: 1px solid rgba(96, 166, 241, 0.2);
-    border-radius: 12px;
-    background: rgba(215, 233, 255, 0.06);
-    color: #dceaff;
-    font-size: 13px;
+    border: 1px solid rgba(var(--rgb-blue-66), 0.2);
+    border-radius: var(--radius-sm);
+    background: rgba(var(--rgb-blue-92), 0.06);
+    color: rgb(var(--rgb-blue-92));
+    font-size: var(--text-sm);
     line-height: 1.4;
 }
 
@@ -428,7 +410,7 @@
     .employer-enquiry {
         min-height: 0;
         padding: 32px 0 30px;
-        border-radius: 22px;
+        border-radius: var(--radius-lg);
     }
     .employer-enquiry__intro {
         padding: 0 18px;
@@ -437,14 +419,13 @@
         min-height: 38px;
         gap: 9px;
         padding: 0 14px;
-        font-size: 10px;
     }
     .employer-enquiry__intro h2 {
         margin: 19px 0 14px;
         font-size: clamp(36px, 10vw, 52px);
     }
     .employer-enquiry__intro p {
-        font-size: 16px;
+        font-size: var(--text-lg);
     }
     .employer-enquiry__form-button {
         min-height: 52px;
@@ -465,7 +446,7 @@
         gap: 5px;
         padding: 7px 9px;
         border-radius: 15px;
-        font-size: 12px;
+        font-size: var(--text-xs);
     }
     .employer-enquiry__college-logo {
         width: 40px;
@@ -494,6 +475,9 @@
 @media (prefers-reduced-motion: reduce) {
     .employer-enquiry__track {
         animation: none;
+    }
+    .employer-enquiry__ticker-toggle {
+        display: none;
     }
     .employer-enquiry__form-button {
         transition: none;

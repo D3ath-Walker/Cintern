@@ -1,0 +1,17 @@
+.error-fallback {
+    display: grid;
+    min-height: 100vh;
+    place-content: center;
+    padding: var(--content-gutter);
+    color: var(--color-text);
+    text-align: center;
+}
+
+.error-fallback h1 {
+    margin: 0 0 12px;
+}
+
+.error-fallback p {
+    margin: 0;
+    color: var(--color-text-muted);
+}

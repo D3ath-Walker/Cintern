@@ -9,16 +9,16 @@ const strengths = [
 
 export default function WhyChiPi() {
   return (
-    <section className="refresh-section refresh-why" id="why-chip">
-      <div className="refresh-why__intro">
-        <span className="refresh-heading__eyebrow">WHY CHIPI</span>
+    <section className="content-section why-chipi" id="why-chipi">
+      <div className="why-chipi__intro">
+        <span className="section-eyebrow">WHY CHIPI</span>
         <h2>Connecting industry needs with campus talent</h2>
         <p>ChiPi brings employer requirements, technical preparation, and college relationships together to support a clearer fresher hiring journey.</p>
       </div>
-      <div className="refresh-why__grid">
+      <div className="why-chipi__grid">
         {strengths.map(([title, description]) => (
-          <article className="refresh-why__item" key={title}>
-            <span className="refresh-why__spark" aria-hidden="true">✦</span>
+          <article className="why-chipi__item" key={title}>
+            <span className="why-chipi__spark" aria-hidden="true">✦</span>
             <div><h3>{title}</h3><p>{description}</p></div>
           </article>
         ))}

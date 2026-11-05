@@ -1,7 +1,10 @@
 import { useEffect, useRef, useState } from 'react';
 import Button from '../../components/Button/Button';
-import sideImage from '../../assets/images/side1.png';
+import { GOOGLE_FORM_URL } from '../../data/siteLinks';
+import sideImage from '../../assets/images/side1.webp';
 import './Hero.css';
+
+const TAGLINE = 'Save Time, Cut Cost, Find Talent Worth the Most.';
 
 const checks = [
   'Built around your roles',
@@ -22,6 +25,7 @@ export default function Hero() {
   const [videoVisible, setVideoVisible] = useState(false);
   const [videoPlaying, setVideoPlaying] = useState(false);
   const [videoMuted, setVideoMuted] = useState(true);
+  const prefersReducedMotion = window.matchMedia?.('(prefers-reduced-motion: reduce)')?.matches;
 
   useEffect(() => {
     const video = videoRef.current;
@@ -36,9 +40,9 @@ export default function Hero() {
       const isVisible = entry.isIntersecting && entry.intersectionRatio >= 0.25;
       setVideoVisible(isVisible);
 
-      if (!isVisible) {
-        videoWasPlayingRef.current = !video.paused;
-        if (!video.paused) video.pause();
+      if (!isVisible && !video.paused) {
+        videoWasPlayingRef.current = true;
+        video.pause();
       }
     }, { threshold: [0, 0.25] });
 
@@ -53,14 +57,15 @@ export default function Hero() {
     if (!video) return;
 
     const shouldStartPlayback =
-      !videoHasEnteredViewportRef.current || videoWasPlayingRef.current;
+      !prefersReducedMotion &&
+      (!videoHasEnteredViewportRef.current || videoWasPlayingRef.current);
     videoHasEnteredViewportRef.current = true;
 
     if (shouldStartPlayback) {
       videoWasPlayingRef.current = false;
       video.play().catch(() => setVideoPlaying(false));
     }
-  }, [videoVisible]);
+  }, [videoVisible, prefersReducedMotion]);
 
   const toggleVideoPlayback = () => {
     const video = videoRef.current;
@@ -77,10 +82,12 @@ export default function Hero() {
     <>
       <section className="hero" id="top">
         <div className="hero__copy">
-          <span className="eyebrow hero__tagline">Save Time, Cut Cost, Find Talent Worth the Most.</span>
+          <span className="hero__tagline">
+            {TAGLINE}
+            <span className="hero__tagline-shine" aria-hidden="true">{TAGLINE}</span>
+          </span>
           <h1>
-            Build the <em>right fresher<br className="desktop-break" /> talent pool</em> before you
-            <br className="desktop-break" /> start interviewing.
+            Build the <em>right fresher talent pool</em> before you start interviewing.
           </h1>
           <p>
             A <span className="hero__claim-first">first-of-its-kind</span>{' '}
@@ -88,8 +95,8 @@ export default function Hero() {
             with emerging graduate talent.
           </p>
           <div className="hero__actions">
-            <Button>
-              Share Your Hiring Requirement <span>→</span>
+            <Button href={GOOGLE_FORM_URL} target="_blank" rel="noreferrer">
+              Share Your Hiring Requirement <span aria-hidden="true">→</span>
             </Button>
             <Button secondary href="#how-it-works">
               See How It Works
@@ -97,11 +104,12 @@ export default function Hero() {
           </div>
           <div className="hero__checks">
             {checks.map((check) => (
-              <span key={check}>✓ <b>{check}</b></span>
+              <span key={check}><span aria-hidden="true">✓</span> <b>{check}</b></span>
             ))}
           </div>
         </div>
         <div className="hero__side-image-frame">
+          <div className="hero__side-glow" aria-hidden="true"><span /></div>
           <video
             ref={videoRef}
             className="hero__side-video"
@@ -127,14 +135,14 @@ export default function Hero() {
             className="hero__video-toggle"
             type="button"
             aria-label={videoPlaying ? 'Pause hero video' : 'Play hero video'}
-            aria-pressed={videoPlaying}
             onClick={toggleVideoPlayback}
-          />
+          >
+            {!videoPlaying && <span className="hero__video-play" aria-hidden="true">▶</span>}
+          </button>
           <button
             className="hero__video-mute"
             type="button"
             aria-label={videoMuted ? 'Unmute hero video' : 'Mute hero video'}
-            aria-pressed={videoMuted}
             onClick={() => setVideoMuted((muted) => !muted)}
           >
             <svg viewBox="0 0 24 24" aria-hidden="true" focusable="false">
@@ -152,7 +160,7 @@ export default function Hero() {
       <div className="stats-strip">
         {stats.map(([icon, title, subtitle, note]) => (
           <div key={title}>
-            <span className="stat-icon">{icon}</span>
+            <span className="stat-icon" aria-hidden="true">{icon}</span>
             <strong>
               {title}
               <small>{subtitle}</small>

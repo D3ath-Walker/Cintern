@@ -1,4 +1,4 @@
-.refresh-process__steps {
+.how-it-works__steps {
     display: flex;
     flex-direction: column;
     gap: 42px;
@@ -7,17 +7,17 @@
     list-style: none;
 }
 
-.refresh-process__step {
+.how-it-works__step {
     display: grid;
     grid-template-columns: minmax(0, 1fr) 280px;
     align-items: center;
     gap: 32px;
-    height: 280px;
+    min-height: 280px;
     padding: 22px 28px;
     overflow: visible;
 }
 
-.refresh-process__step:not(:last-child)::after {
+.how-it-works__step:not(:last-child)::after {
     position: absolute;
     top: auto;
     right: auto;
@@ -27,43 +27,48 @@
     height: auto;
     border-radius: 0;
     background: none;
-    color: #a9ceff;
+    color: rgb(var(--rgb-blue-83));
     content: '↓';
+    content: '↓' / '';
     font-size: 26px;
     font-weight: 500;
     line-height: 1;
     transform: translateX(-50%);
 }
 
-.refresh-process__copy {
+.how-it-works__step:last-child::after {
+    content: none;
+}
+
+.how-it-works__copy {
     max-width: 760px;
 }
 
-.refresh-process__copy p {
+.how-it-works__copy p {
     max-width: 560px;
 }
 
-.refresh-process__step .refresh-card__number {
+.how-it-works__step .content-card__number {
     width: auto;
     height: auto;
     padding: 8px 12px;
-    border-radius: 999px;
+    border-radius: var(--radius-pill);
 }
 
-.refresh-process__step h3 {
+.how-it-works__step h3 {
     margin-top: 14px;
 }
 
-.refresh-process__image {
+.how-it-works__image {
     display: block;
     width: 100%;
     aspect-ratio: 4 / 3;
     overflow: hidden;
-    border: 1px solid rgba(192, 219, 255, 0.2);
-    border-radius: 12px;
+    border: 1px solid rgba(var(--rgb-blue-88), 0.2);
+    border-radius: var(--radius-sm);
 }
 
-.refresh-process__image img {
+.how-it-works__image img {
     display: block;
     width: 100%;
     height: 100%;
@@ -71,30 +76,30 @@
 }
 
 @media (max-width: 650px) {
-    .refresh-process__step {
+    .how-it-works__step {
         grid-template-columns: minmax(0, 1fr) 40%;
         gap: 14px;
-        height: 330px;
+        min-height: 330px;
         padding: 18px;
     }
 
-    .refresh-process__step h3 {
+    .how-it-works__step h3 {
         font-size: 18px;
     }
 
-    .refresh-process__step p {
-        font-size: 13px;
+    .how-it-works__step p {
+        font-size: var(--text-sm);
     }
 
 }
 
 @media (max-width: 420px) {
-    .refresh-process__step {
-        height: 420px;
+    .how-it-works__step {
+        min-height: 420px;
     }
 
-    .refresh-process__step p {
-        font-size: 12px;
+    .how-it-works__step p {
+        font-size: var(--text-xs);
         line-height: 1.5;
     }
 }
