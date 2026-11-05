@@ -26,7 +26,7 @@ Report every violation with its rule number and `file:line`. Part A comes from `
 
 ## Commands and dependencies
 - **A15.** Use `npm start` for the dev server at `http://localhost:3000` and `npm run build` for a production build in `build/`.
-- **A16.** `npm test` runs in watch mode. Use `CI=true npm test -- --watchAll=false` for a single non-interactive run.
+- **A16.** `npm test` runs in watch mode. For a single non-interactive run, use `CI=true npm test -- --watchAll=false` in Bash or `$env:CI='true'; npm test -- --watchAll=false` in PowerShell.
 - **A17.** Do not run `npm run eject`.
 - **A18.** Do not add new dependencies unless asked.
 
@@ -112,15 +112,15 @@ Report every violation with its rule number and `file:line`. Part A comes from `
 - **B9.** Colors come from variables in `src/styles/variables.css`. New or changed CSS must not add hard-coded colors, and a missing color is added as a variable.
 - **B10.** A `var()` fallback is either removed or identical to the variable's value.
 - **B11.** Layout values used in more than one place, such as header height and z-index layers, are variables. Page-edge spacing uses `--content-gutter`, not a raw `vw` value.
-- **B12.** Media queries use only the site breakpoints: 420, 650, 700, 850, and 1200px. Move the existing 600 and 950px queries onto this list when those rules are next changed.
-- **B13.** Contact details, social URLs, section links, and other values used more than once live in `src/Data/siteLinks.js`, not in component files.
+- **B12.** Media queries use only the site breakpoints: 420, 650, 700, 850, 950, and 1200px.
+- **B13.** Contact details, social URLs, section links, and other values used more than once live in `src/data/siteLinks.js`, not in component files.
 
 ## Naming and code structure
 - **B14.** A component's file name matches its folder and exported component. Names do not contain status words such as `Updated` or `Refresh`.
 - **B15.** Non-component folders are lowercase, and file names in `src/` contain no spaces.
 - **B16.** The two-space rule (A39) applies to JS and JSX. CSS files use four spaces, so do not reformat them.
 - **B17.** Local variables do not shadow browser or build globals such as `process`, `window`, `document`, or `location`.
-- **B18.** A component imports the CSS it depends on and does not use another component's BEM classes. Move shared classes to a shared stylesheet.
+- **B18.** A component imports the CSS it depends on and does not use another component's BEM classes. Move shared classes to a shared stylesheet in `src/styles/`, which is loaded once for the whole site.
 - **B19.** Update `README.md` in the same change when code it describes moves or changes.
 - **B20.** Dead code (A26, A36) includes branches that can never run and CSS selectors that match nothing.
 
@@ -131,7 +131,7 @@ Report every violation with its rule number and `file:line`. Part A comes from `
 - **B24.** Decorative characters and icons such as `→`, `✓`, and `♧` have `aria-hidden="true"`.
 - **B25.** The page has a skip link to the main content as its first focusable element.
 - **B26.** A toggle button either changes its label or uses `aria-pressed`, not both.
-- **B27.** Menus and dialogs close on Escape, move focus in when opened, and return focus when closed. While a dialog is open, the page behind it cannot scroll or take focus.
+- **B27.** Menus and dialogs close on Escape and return focus when closed. A dialog moves focus inside when opened, and the page behind it cannot scroll or take focus. A menu keeps focus on its toggle, and the next Tab enters the menu.
 - **B28.** Content that moves for more than five seconds has a pause control that works by keyboard and touch, not just hover.
 - **B29.** All motion respects `prefers-reduced-motion`, including smooth scrolling, hover movement, and video autoplay.
 - **B30.** Videos with speech have captions.
@@ -154,4 +154,4 @@ Report every violation with its rule number and `file:line`. Part A comes from `
 - **B41.** Public numbers and claims have a source and agree with the data on the page. Third-party logos are used with permission.
 - **B42.** Links go where their labels say, use official accounts, and use standard link types (for example `mailto:` for email).
 - **B43.** The site has a canonical URL, `og:url`, `og:image`, `robots.txt`, and `sitemap.xml`.
-- **B44.** In `List of Colleges.json`, names are unique because they are used as React keys, every `logo` path matches a file, and no logo file is left unused.
+- **B44.** In `src/data/colleges.json`, names are unique because they are used as React keys, every `logo` path matches a file, and no logo file is left unused.
