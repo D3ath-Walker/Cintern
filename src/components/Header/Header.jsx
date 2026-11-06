@@ -9,8 +9,13 @@ const headerLinks = SECTION_LINKS.filter((link) => link.inHeader);
 export default function Header() {
   const [menuOpen, setMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState(null);
+  const [theme, setTheme] = useState('dark');
   const menuToggleRef = useRef(null);
   const closeMenu = () => setMenuOpen(false);
+
+  useEffect(() => {
+    document.documentElement.dataset.theme = theme;
+  }, [theme]);
 
   useEffect(() => {
     let frameId = null;
@@ -113,6 +118,16 @@ export default function Header() {
           <Button secondary href="#site-footer" onClick={closeMenu}>
             Contact Us
           </Button>
+          <button
+            className="theme-toggle"
+            type="button"
+            aria-label={`Switch to ${theme === 'dark' ? 'light' : 'dark'} mode`}
+            aria-pressed={theme === 'light'}
+            onClick={() => setTheme((currentTheme) => (currentTheme === 'dark' ? 'light' : 'dark'))}
+          >
+            <span aria-hidden="true">{theme === 'dark' ? '☀' : '☾'}</span>
+            {theme === 'dark' ? 'Light mode' : 'Dark mode'}
+          </button>
         </nav>
       </header>
     </>

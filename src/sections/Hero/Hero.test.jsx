@@ -3,7 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { GOOGLE_FORM_URL } from '../../data/siteLinks';
 import Hero from './Hero';
 
-const getVideo = () => screen.getByLabelText('ChiPi Technologies talent pipeline introduction');
+const getVideo = () => screen.getByLabelText('ChiPi Technologies company introduction');
 
 afterEach(() => {
   delete window.matchMedia;

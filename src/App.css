@@ -38,6 +38,11 @@
     animation: white-spots-drift 52s ease-in-out infinite alternate;
 }
 
+:root[data-theme="light"] .site-page::before,
+:root[data-theme="light"] .site-page::after {
+    opacity: 0.25;
+}
+
 @keyframes blue-spots-drift {
     0% {
         transform: translate(-6%, -5%);

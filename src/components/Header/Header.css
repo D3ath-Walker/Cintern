@@ -145,12 +145,76 @@
     color: rgb(var(--rgb-blue-96));
 }
 
+.theme-toggle {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 7px;
+    min-height: 38px;
+    padding: 0 13px;
+    border: 1px solid rgba(var(--rgb-blue-88), 0.34);
+    border-radius: 10px;
+    background: rgba(var(--rgb-blue-92), 0.08);
+    color: rgb(var(--rgb-blue-96));
+    font-size: var(--text-xs);
+    font-weight: 600;
+    white-space: nowrap;
+    cursor: pointer;
+    transition: background-color 180ms ease, border-color 180ms ease;
+}
+
+.theme-toggle:hover {
+    border-color: rgba(var(--rgb-blue-75), 0.62);
+    background: rgba(var(--rgb-blue-92), 0.16);
+}
+
 .menu-toggle {
     display: none;
     border: 0;
     background: none;
     font-size: var(--text-2xl);
     color: rgb(var(--rgb-blue-96));
+}
+
+:root[data-theme="light"] .topbar,
+:root[data-theme="light"] .site-header {
+    background: #0b2f5b;
+    color: #fff;
+}
+
+:root[data-theme="light"] .topbar__left span,
+:root[data-theme="light"] .nav__link--active,
+:root[data-theme="light"] .nav__link--active:hover {
+    color: #ffe08a;
+}
+
+:root[data-theme="light"] .topbar__right,
+:root[data-theme="light"] .nav__link,
+:root[data-theme="light"] .nav__link:hover,
+:root[data-theme="light"] .nav .button--secondary,
+:root[data-theme="light"] .theme-toggle,
+:root[data-theme="light"] .menu-toggle {
+    color: #f2f7ff;
+}
+
+:root[data-theme="light"] .nav .button--secondary,
+:root[data-theme="light"] .theme-toggle {
+    border-color: rgba(255, 255, 255, 0.38);
+    background: rgba(255, 255, 255, 0.1);
+}
+
+:root[data-theme="light"] .theme-toggle:hover {
+    border-color: rgba(255, 255, 255, 0.7);
+    background: rgba(255, 255, 255, 0.2);
+}
+
+:root[data-theme="light"] .nav--open {
+    border-color: rgba(255, 255, 255, 0.2);
+    background: #0b2f5b;
+}
+
+:root[data-theme="light"] .site-header::after {
+    box-shadow: 0 3px 24px rgba(255, 210, 92, 0.32);
 }
 
 @media (min-width: 1200px) {
@@ -219,6 +283,10 @@
     }
 
     .nav--open .button {
+        min-height: 44px;
+    }
+
+    .nav--open .theme-toggle {
         min-height: 44px;
     }
 }

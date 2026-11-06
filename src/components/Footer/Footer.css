@@ -5,6 +5,30 @@
     color: rgb(var(--rgb-white));
 }
 
+:root[data-theme="light"] .site-footer {
+    background: #0b2f5b;
+    color: #fff;
+}
+
+:root[data-theme="light"] .site-footer__about p,
+:root[data-theme="light"] .site-footer__nav h2,
+:root[data-theme="light"] .site-footer__contact h2,
+:root[data-theme="light"] .site-footer__nav a,
+:root[data-theme="light"] .site-footer__contact a,
+:root[data-theme="light"] .site-footer__contact p,
+:root[data-theme="light"] .site-footer__copyright {
+    color: #edf5ff;
+}
+
+:root[data-theme="light"] .site-footer__nav a:hover,
+:root[data-theme="light"] .site-footer__contact > a:hover {
+    color: #ffe08a;
+}
+
+:root[data-theme="light"] .site-footer__copyright {
+    border-color: rgba(255, 255, 255, 0.28);
+}
+
 .site-footer__main {
     display: grid;
     grid-template-columns: minmax(0, 1.15fr) minmax(180px, 0.9fr) minmax(0, 1.2fr);

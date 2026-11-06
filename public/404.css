@@ -1,3 +1,4 @@
+/* Default (dark) theme */
 body {
     display: grid;
     min-height: 100vh;
@@ -13,3 +14,14 @@ body {
 a {
     color: #ffd166;
 }
+
+/* Light theme */
+:root[data-theme="light"] body {
+    background: #fff;
+    color: #031326;
+}
+
+:root[data-theme="light"] a {
+    color: #ff9500;
+}
+
